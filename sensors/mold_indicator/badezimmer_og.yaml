@@ -1,0 +1,21 @@
+  - platform: mold_indicator
+    name: Schimmelrisiko - Badezimmer OG
+    indoor_temp_sensor: sensor.multi_badezimmer_og_temperature
+    indoor_humidity_sensor: sensor.multi_badezimmer_og_humidity
+    outdoor_temp_sensor: sensor.openweathermap_temperature
+    calibration_factor: 1.5
+
+  - platform: template
+    sensors:
+      schimmelrisikoklasse_badezimmer_og:
+        friendly_name: "Schimmelrisikoklasse - Badezimmer OG"
+        value_template: >-
+          {% if states('sensor.schimmelrisiko_badezimmer_og')|float > 65%}
+            Normal
+          {% elif states('sensor.schimmelrisiko_badezimmer_og')|float > 70 %}
+            Erhöht
+          {% elif states('sensor.schimmelrisiko_badezimmer_og')|float > 80 %}
+            Kritisch
+          {% else %}
+            Gering
+          {% endif %}

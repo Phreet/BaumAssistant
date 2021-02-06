@@ -1,0 +1,122 @@
+  - platform: group
+    name: Schlafzimmer - Deckenlicht
+    entities:
+      - light.white_schlafzimmer_1
+      - light.white_schlafzimmer_2
+      - light.white_schlafzimmer_3
+      - light.white_schlafzimmer_4
+
+  - platform: group
+    name: Arbeitszimmer - Hue Play
+    entities:
+      - light.hue_play_1
+      - light.hue_play_2
+
+  - platform: group
+    name: Wohnzimmer - Stehlampe
+    entities:
+      - light.color_wohnzimmer_b
+      - light.color_wohnzimmer_w
+
+  - platform: group
+    name: Wohnzimmer
+    entities:
+      - light.wohnzimmer_stehlampe
+      - light.hue_go
+      - light.white_wohnzimmer_decke
+
+  - platform: group
+    name: Treppenhaus - Strahler Oben
+    entities:
+      - light.ambiance_treppenhaus_oo
+      - light.ambiance_treppenhaus_ou
+
+  - platform: group
+    name: Treppenhaus - Strahler Unten
+    entities:
+      - light.ambiance_treppenhaus_uo
+      - light.ambiance_treppenhaus_uu
+
+  - platform: group
+    name: Treppenhaus
+    entities:
+      - light.treppenhaus_strahler_oben
+      - light.treppenhaus_strahler_unten
+
+  - platform: group
+    name: Eingang
+    entities:
+      - light.ambiance_eingang_vorne
+      - light.ambiance_eingang_mitte
+      - light.ambiance_eingang_hinten
+
+  - platform: group
+    name: Flur
+    entities:
+      - light.ambiance_flur_vorne
+      - light.ambiance_flur_hinten
+
+  - platform: group
+    name: Durchgang
+    entities:
+      - light.flur
+      - light.eingang
+
+  - platform: group
+    name: Aufgang
+    entities:
+      - light.treppenhaus
+      - light.eingang
+
+  - platform: group
+    name: Küche - Deckenlicht
+    entities:
+      - light.ambiance_kuche_kuhlschrank
+      - light.ambiance_kuche_backofen
+      - light.ambiance_kuche_spule
+
+  - platform: group
+    name: Küche
+    entities:
+      - light.kuche_deckenlicht
+      - light.white_tresen
+
+  - platform: group
+    name: Esszimmer - Deckenlicht
+    entities:
+      - light.ambiance_esszimmer_separee
+      - light.ambiance_esszimmer_treppe
+      - light.ambiance_esszimmer_tur
+      - light.ambiance_esszimmer_wand
+
+  - platform: group
+    name: Esszimmer - Esstisch
+    entities:
+      - light.ambiance_esstisch_1
+      - light.ambiance_esstisch_2
+
+  - platform: group
+    name: Esszimmer
+    entities:
+      - light.esszimmer_esstisch
+      - light.esszimmer_spot
+
+  - platform: group
+    name: Essbereich
+    entities:
+      - light.esszimmer
+      - light.kuche
+
+  - platform: group
+    name: Erdgeschoß
+    entities:
+      - light.esszimmer
+      - light.kuche
+      - light.wohnzimmer
+      - light.white_gastezimmer
+
+  - platform: group
+    name: Obergeschoß
+    entities:
+      - light.schlafzimmer_deckenlicht
+      - light.arbeitszimmer_hue_play

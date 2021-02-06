@@ -1,0 +1,221 @@
+- id: '1610593146218'
+  alias: BaumAssistant - Set Fan Speed for Argon40
+  description: Set fan speed of Argon40 for Raspberry Pi based on numeric value from
+    slider
+  trigger:
+  - platform: state
+    entity_id: input_number.argon40_fanspeed
+  condition: []
+  action:
+  - service: argon40.set_fan_speed
+    data:
+      speed: '{{ states(''input_number.argon40_fanspeed'') }}'
+  mode: single
+- id: '1611109736952'
+  alias: Hue Switch - Wohnzimmer - Licht an
+  description: Manuelles einschalten des Lichts im Wohnzimmer (einfacher Druck auf
+    Schalter links oben)
+  trigger:
+  - device_id: 4fdb633208d18f26663b049098c311ae
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: button_1
+  condition: []
+  action:
+  - scene: scene.licht_wohnzimmer_warm
+  mode: single
+- id: '1611109902456'
+  alias: Hue Switch - Wohnzimmer - Licht aus
+  description: Manuelles ausschalten des Lichts im Wohnzimmer (einfacher Druck auf
+    Schalter links unten)
+  trigger:
+  - device_id: 4fdb633208d18f26663b049098c311ae
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: button_2
+  condition: []
+  action:
+  - service: light.turn_off
+    data:
+      transition: 2
+    entity_id: light.wohnzimmer
+  mode: single
+- id: '1611110148290'
+  alias: Hue Switch - Wohnzimmer - Lichtszene 1
+  description: Manually active a first living room light scene  - single click of
+    both top buttons
+  trigger:
+  - device_id: 4fdb633208d18f26663b049098c311ae
+    domain: deconz
+    platform: device
+    type: remote_button_short_release
+    subtype: top_buttons
+  condition: []
+  action:
+  - scene: scene.licht_wohnzimmer_ambiente_warm
+  mode: single
+- id: '1611110635997'
+  alias: Hue Switch - Wohnzimmer - Lichtszene 2
+  description: Manually active a second living room light scene  - single click of
+    both bottom buttons
+  trigger:
+  - device_id: 4fdb633208d18f26663b049098c311ae
+    domain: deconz
+    platform: device
+    type: remote_button_short_release
+    subtype: bottom_buttons
+  condition: []
+  action:
+  - scene: scene.licht_wohnzimmer_ambiente_kalt
+  mode: single
+- id: '1611533571050'
+  alias: Hue Switch - Wohnzimmer - Lichtgruppe 1
+  description: Manually active a first living room light group  - single click of
+    top right button
+  trigger:
+  - device_id: 4fdb633208d18f26663b049098c311ae
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: button_3
+  condition: []
+  action:
+  - scene: scene.licht_wohnzimmer_hell_decke
+  mode: single
+- id: '1611533789209'
+  alias: Hue Switch - Wohnzimmer - Lichtgruppe 2
+  description: ''
+  trigger:
+  - device_id: 4fdb633208d18f26663b049098c311ae
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: button_4
+  condition: []
+  action:
+  - scene: scene.licht_wohnzimmer_hell_stehlampe
+  mode: restart
+- id: '1611534133830'
+  alias: Hue Switch - Wohnzimmer - Lichtszene 3
+  description: ''
+  trigger:
+  - device_id: 4fdb633208d18f26663b049098c311ae
+    domain: deconz
+    platform: device
+    type: remote_button_long_press
+    subtype: bottom_buttons
+  condition: []
+  action:
+  - scene: scene.licht_wohnzimmer_nacht
+  mode: single
+- id: '1611535378933'
+  alias: Hue Switch - Wohnzimmer - Colorloop
+  description: ''
+  trigger:
+  - device_id: 4fdb633208d18f26663b049098c311ae
+    domain: deconz
+    platform: device
+    type: remote_button_long_press
+    subtype: top_buttons
+  condition: []
+  action:
+  - scene: scene.licht_wohnzimmer_ambiente_loop
+  mode: single
+- id: '1611946914070'
+  alias: Hue Dimmer - Schlafzimmer - Light on
+  description: ''
+  trigger:
+  - device_id: d329226937e37ac733231e82d0823e6d
+    domain: deconz
+    platform: device
+    type: remote_button_short_release
+    subtype: turn_on
+  condition:
+  - condition: time
+    after: '23:00:00'
+    before: 06:00:00
+  action:
+  - scene: scene.hue_schlafzimmer_nacht
+  mode: single
+- id: '1611946948712'
+  alias: Hue Dimmer - Schlafzimmer - Light on (Day)
+  description: ''
+  trigger:
+  - device_id: d329226937e37ac733231e82d0823e6d
+    domain: deconz
+    platform: device
+    type: remote_button_short_release
+    subtype: turn_on
+  condition:
+  - condition: time
+    after: 06:00:00
+    before: '23:00:00'
+  action:
+  - scene: scene.hue_schlafzimmer_ambiente
+  mode: single
+- id: '1611947597520'
+  alias: Hue Dimmer - Schlafzimmer - Light on (Test)
+  description: ''
+  trigger:
+  - device_id: d329226937e37ac733231e82d0823e6d
+    domain: deconz
+    platform: device
+    type: remote_button_short_release
+    subtype: turn_on
+  condition:
+  - condition: time
+    after: 06:00:00
+    before: '23:00:00'
+  action:
+  - scene: scene.hue_schlafzimmer_ambiente
+  mode: single
+- id: '1612483646732'
+  alias: Hue Taster - Eingang - Licht an
+  description: ''
+  trigger:
+  - device_id: dbb76e56ba0e9889a8648ac6dc4dd321
+    domain: deconz
+    platform: device
+    type: remote_button_short_release
+    subtype: button_1
+  condition: []
+  action:
+  - service: scene.turn_on
+    data: {}
+    entity_id: scene.licht_eingang_ambiente, scene.licht_flur_ambiente
+  mode: single
+- id: '1612484496288'
+  alias: Hue Taster - Eingang - Licht aus
+  description: Test
+  trigger:
+  - device_id: dbb76e56ba0e9889a8648ac6dc4dd321
+    domain: deconz
+    platform: device
+    type: remote_button_short_release
+    subtype: button_2
+  condition: []
+  action:
+  - service: light.turn_off
+    entity_id: light.eingang, light.treppenhaus, light.flur
+  mode: single
+- id: '1612529119404'
+  alias: Notify about phone state
+  trigger:
+  - platform: state
+    entity_id: sensor.fritz_box_6591_cable_kdg_call_monitor_fritzbox_callmonitor
+  action:
+  - service: notify.persistent_notification
+    data:
+      title: Phone
+      message: "{% if is_state(\"sensor.fritz_box_6591_cable_kdg_call_monitor_fritzbox_callmonitor\"\
+        , \"idle\") %}\n  Phone is idle\n{% elif is_state(\"sensor.phfritz_box_6591_cable_kdg_call_monitor_fritzbox_callmonitorone\"\
+        , \"dialing\") %}\n  Calling {{ state_attr('sensor.fritz_box_6591_cable_kdg_call_monitor_fritzbox_callmonitor',\
+        \ 'to_name') }} ({{ state_attr('sensor.phone', 'to') }})\n{% elif is_state(\"\
+        sensor.fritz_box_6591_cable_kdg_call_monitor_fritzbox_callmonitor\", \"ringing\"\
+        ) %}\n  Incoming call from {{ state_attr('sensor.fritz_box_6591_cable_kdg_call_monitor_fritzbox_callmonitor',\
+        \ 'from_name') }} ({{ state_attr('sensor.phone', 'from') }})\n{% else %}\n\
+        \  Talking to {{ state_attr('sensor.fritz_box_6591_cable_kdg_call_monitor_fritzbox_callmonitor',\
+        \ 'with_name') }} ({{ state_attr('sensor.phone', 'with') }})\n{% endif %}"
+  mode: single

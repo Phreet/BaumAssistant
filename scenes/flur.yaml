@@ -1,0 +1,112 @@
+################################################################################
+### Light scenes for Flur                                                    ###
+### Light bulbs: Philips Hue White Ambiance GU10 (Bluetooth)                 ###
+### min_mireds: 153 - max_mireds: 454                                        ###
+################################################################################
+
+- id: '1612194776009'
+  name: Licht - Flur - Kalt
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_flur_vorne:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 153
+    light.ambiance_flur_hinten:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 153
+
+################################################################################
+- id: '1612194807824'
+  name: Licht - Flur - Ambiente
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_flur_vorne:
+      state: 'on'
+      brightness_pct: 65
+      color_temp: 225
+    light.ambiance_flur_hinten:
+      state: 'on'
+      brightness_pct: 65
+      color_temp: 337
+
+################################################################################
+- id: '1612194845775'
+  name: Licht - Flur - Entspannen
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_flur_vorne:
+      state: 'on'
+      brightness_pct: 60
+      color_temp: 447
+    light.ambiance_flur_hinten:
+      state: 'on'
+      brightness_pct: 60
+      color_temp: 447
+
+################################################################################
+- id: '1612194882239'
+  name: Licht  - Flur - Neutral
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_flur_vorne:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 233
+    light.ambiance_flur_hinten:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 233
+
+################################################################################
+- id: '1612195023082'
+  name: Licht - Flur - Warm
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_flur_vorne:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 346
+    light.ambiance_flur_hinten:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 346
+
+################################################################################
+- id: '1612195085832'
+  name: Licht - Flur - Gedimmt
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_flur_vorne:
+      state: 'on'
+      brightness_pct: 55
+      color_temp: 278
+    light.ambiance_flur_hinten:
+      state: 'on'
+      brightness_pct: 55
+      color_temp: 278
+
+################################################################################
+- id: '1612195120279'
+  name: Licht - Flur - Nacht
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_flur_vorne:
+      state: 'off'
+    light.ambiance_flur_hinten:
+      state: 'on'
+      brightness_pct: 15
+      color_temp: 405
+
+################################################################################
+- id: '1612195156302'
+  name: Licht - Flur - Dekoration
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_flur_vorne:
+      state: 'on'
+      brightness_pct: 75
+      color_temp: 415
+    light.ambiance_flur_hinten:
+      state: 'off'

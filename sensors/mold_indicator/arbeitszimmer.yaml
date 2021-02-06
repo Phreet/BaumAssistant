@@ -1,0 +1,21 @@
+  - platform: mold_indicator
+    name: Schimmelrisiko - Arbeitszimmer
+    indoor_temp_sensor: sensor.multi_arbeitszimmer_temperature
+    indoor_humidity_sensor: sensor.multi_arbeitszimmer_humidity
+    outdoor_temp_sensor: sensor.openweathermap_temperature
+    calibration_factor: 1.6
+
+  - platform: template
+    sensors:
+      schimmelrisikoklasse_arbeitszimmer:
+        friendly_name: "Schimmelrisikoklasse - Arbeitszimmer"
+        value_template: >-
+          {% if states('sensor.schimmelrisiko_arbeitszimmer')|float > 65%}
+            Normal
+          {% elif states('sensor.schimmelrisiko_arbeitszimmer')|float > 70 %}
+            Erhöht
+          {% elif states('sensor.schimmelrisiko_arbeitszimmer')|float > 80 %}
+            Kritisch
+          {% else %}
+            Gering
+          {% endif %}

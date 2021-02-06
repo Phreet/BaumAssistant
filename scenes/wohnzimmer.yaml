@@ -1,0 +1,336 @@
+################################################################################
+### Light scenes for Wohnzimmer                                              ###
+### Light bulb: Philips Hue White E27 (Bluetooth), Philips Hue Go (Gen2),    ###
+###             Philips Hue Ambiance E14 (Bluetooth)                         ###
+### min_mireds: 153 - max_mireds: 500                                        ###
+################################################################################
+
+- id: '1611850462312'
+  name: Licht - Wohnzimmer - Warm
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 205
+      - 120
+      effect: stop
+    light.color_wohnzimmer_w:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 205
+      - 120
+      effect: stop
+    light.white_wohnzimmer_decke:
+      state: 'on'
+      brightness_pct: 100
+    light.hue_go:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 205
+      - 120
+      effect: stop
+
+################################################################################
+- id: '1611850517009'
+  name: Licht - Wohnzimmer - Neutral
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 240
+      - 198
+      effect: stop
+    light.color_wohnzimmer_w:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 240
+      - 198
+      effect: stop
+    light.white_wohnzimmer_decke:
+      state: 'on'
+      brightness_pct: 70
+    light.hue_go:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 240
+      - 198
+      effect: stop
+
+################################################################################
+- id: '1611599848397'
+  name: Licht - Wohnzimmer - Kalt
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 153
+      effect: stop
+    light.color_wohnzimmer_w:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 153
+      effect: stop
+    light.white_wohnzimmer_decke:
+      state: 'on'
+      brightness_pct: 70
+    light.hue_go:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 153
+      effect: stop
+
+################################################################################
+- id: '1611600249724'
+  name: Licht - Wohnzimmer - Ambiente (warm)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'on'
+      brightness_pct: 80
+      rgb_color:
+      - 198
+      - 85
+      - 246
+      effect: stop
+    light.color_wohnzimmer_w:
+      state: 'on'
+      brightness_pct: 80
+      rgb_color:
+      - 229
+      - 152
+      - 19
+      effect: stop
+    light.white_wohnzimmer_decke:
+      state: 'off'
+    light.hue_go:
+      state: 'on'
+      brightness_pct: 95
+      rgb_color:
+      - 255
+      - 45
+      - 0
+      effect: stop
+
+################################################################################
+- id: '1611600438989'
+  name: Licht - Wohnzimmer - Ambiente (kalt)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'on'
+      brightness_pct: 95
+      rgb_color:
+      - 255
+      - 164
+      - 153
+      effect: stop
+    light.color_wohnzimmer_w:
+      state: 'on'
+      brightness_pct: 75
+      rgb_color:
+      - 190
+      - 134
+      - 255
+      effect: stop
+    light.white_wohnzimmer_decke:
+      state: 'off'
+    light.hue_go:
+      state: 'on'
+      brightness_pct: 90
+      rgb_color:
+      - 62
+      - 92
+      - 255
+      effect: stop
+
+################################################################################
+- id: '1611600609675'
+  name: Licht - Wohnzimmer - Ambiente (neutral)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'off'
+    light.color_wohnzimmer_w:
+      state: 'on'
+      brightness_pct: 90
+      rgb_color:
+      - 255
+      - 183
+      - 78
+      effect: stop
+    light.white_wohnzimmer_decke:
+      state: 'on'
+      brightness_pct: 40
+    light.hue_go:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 102
+      - 192
+      - 255
+      effect: stop
+
+################################################################################
+- id: '1611609999675'
+  name: Licht - Wohnzimmer - Ambiente (loop)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'on'
+      brightness_pct: 90
+      effect: colorloop
+    light.color_wohnzimmer_w:
+      state: 'on'
+      brightness_pct: 90
+      effect: colorloop
+    light.white_wohnzimmer_decke:
+      state: 'off'
+    light.hue_go:
+      state: 'on'
+      brightness_pct: 90
+      effect: colorloop
+
+################################################################################
+- id: '1611850570823'
+  name: Licht - Wohnzimmer - Entspannt
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 170
+      - 30
+      effect: stop
+    light.color_wohnzimmer_w:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 170
+      - 30
+      effect: stop
+    light.white_wohnzimmer_decke:
+      state: 'on'
+      brightness_pct: 25
+    light.hue_go:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 170
+      - 30
+      effect: stop
+
+################################################################################
+- id: '1611850639945'
+  name: Licht - Wohnzimmer - Nacht
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'off'
+    light.color_wohnzimmer_w:
+      state: 'off'
+    light.white_wohnzimmer_decke:
+      state: 'on'
+      brightness_pct: 1
+    light.hue_go:
+      state: 'off'
+
+################################################################################
+- id: '1611850686584'
+  name: Licht - Wohnzimmer - Gedimmt
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'on'
+      brightness_pct: 30
+      rgb_color:
+      - 255
+      - 204
+      - 116
+      effect: stop
+    light.color_wohnzimmer_w:
+      state: 'off'
+    light.white_wohnzimmer_decke:
+      state: 'on'
+      brightness_pct: 30
+    light.hue_go:
+      state: 'off'
+
+################################################################################
+- id: '1611850330148'
+  name: Licht - Wohnzimmer - Hell (Decke)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'off'
+    light.color_wohnzimmer_w:
+      state: 'off'
+    light.white_wohnzimmer_decke:
+      state: 'on'
+      brightness_pct: 100
+    light.hue_go:
+      state: 'off'
+
+################################################################################
+- id: '1611850880248'
+  name: Licht - Wohnzimmer - Hell (Stehlampe)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 217
+      - 145
+      effect: stop
+    light.color_wohnzimmer_w:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 217
+      - 145
+      effect: stop
+    light.white_wohnzimmer_decke:
+      state: 'off'
+    light.hue_go:
+      state: 'off'
+
+################################################################################
+- id: '1662050810208'
+  name: Licht - Wohnzimmer - Hell (Go)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_wohnzimmer_b:
+      state: 'off'
+    light.color_wohnzimmer_w:
+      state: 'off'
+    light.white_wohnzimmer_decke:
+      state: 'off'
+    light.hue_go:
+      state: 'on'
+      brightness_pct: 100
+      rgb_color:
+      - 255
+      - 217
+      - 145
+      effect: stop

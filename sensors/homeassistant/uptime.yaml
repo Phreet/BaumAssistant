@@ -1,0 +1,5 @@
+################################################################################
+#### Time since the last HomeAssistant core restart
+################################################################################
+  - platform: uptime
+    name: HomeAssistant Core - Time Online

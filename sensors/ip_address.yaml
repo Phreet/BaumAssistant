@@ -1,0 +1,14 @@
+################################################################################
+#### Get the public IPv4 and IPv6 address
+#### Scan interval: 12h
+#### https://www.home-assistant.io/integrations/dnsip/
+################################################################################
+  - platform: dnsip
+    name: IPv4 address
+    ipv6: false
+    scan_interval: 43200
+
+  - platform: dnsip
+    name: IPv6 address
+    ipv6: true
+    scan_interval: 43200

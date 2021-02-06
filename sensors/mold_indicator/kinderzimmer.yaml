@@ -1,0 +1,21 @@
+  - platform: mold_indicator
+    name: Schimmelrisiko - Kinderzimmer
+    indoor_temp_sensor: sensor.multi_kinderzimmer_temperature
+    indoor_humidity_sensor: sensor.multi_kinderzimmer_humidity
+    outdoor_temp_sensor: sensor.openweathermap_temperature
+    calibration_factor: 1.5  # TBD
+
+  - platform: template
+    sensors:
+      schimmelrisikoklasse_kinderzimmer:
+        friendly_name: "Schimmelrisikoklasse - Kinderzimmer"
+        value_template: >-
+          {% if states('sensor.schimmelrisiko_kinderzimmer')|float > 65%}
+            Normal
+          {% elif states('sensor.schimmelrisiko_kinderzimmer')|float > 70 %}
+            Erhöht
+          {% elif states('sensor.schimmelrisiko_kinderzimmer')|float > 80 %}
+            Kritisch
+          {% else %}
+            Gering
+          {% endif %}

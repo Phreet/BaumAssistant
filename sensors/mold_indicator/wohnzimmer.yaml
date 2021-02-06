@@ -1,0 +1,21 @@
+  - platform: mold_indicator
+    name: Schimmelrisiko - Wohnzimmer
+    indoor_temp_sensor: sensor.multi_wohnzimmer_temperature
+    indoor_humidity_sensor: sensor.multi_wohnzimmer_humidity
+    outdoor_temp_sensor: sensor.openweathermap_temperature
+    calibration_factor: 1.5  # TBD
+
+  - platform: template
+    sensors:
+      schimmelrisikoklasse_wohnzimmer:
+        friendly_name: "Schimmelrisikoklasse - Wohnzimmer"
+        value_template: >-
+          {% if states('sensor.schimmelrisiko_wohnzimmer')|float > 65%}
+            Normal
+          {% elif states('sensor.schimmelrisiko_wohnzimmer')|float > 70 %}
+            Erhöht
+          {% elif states('sensor.schimmelrisiko_wohnzimmer')|float > 80 %}
+            Kritisch
+          {% else %}
+            Gering
+          {% endif %}

@@ -1,0 +1,39 @@
+- platform: template
+  sensors:
+    srhh_blaue_papiertonne_1d:
+      friendly_name: "blaue Papiertonne (morgen)"
+      value_template: >-
+        {% set collection = as_timestamp(states.sensor.srhh_blaue_papiertonne.state)|timestamp_custom("%Y-%m-%d") %}
+        {% set tomorrow = (as_timestamp(now()) + 86400)|timestamp_custom("%Y-%m-%d") %}
+        {{ collection == tomorrow }}
+- platform: template
+  sensors:
+    srhh_gelbe_wertstofftonne_1d:
+      friendly_name: "gelbe Wertstofftonne/-sack (morgen)"
+      value_template: >-
+        {% set collection = as_timestamp(states.sensor.srhh_gelbe_wertstofftonne.state)|timestamp_custom("%Y-%m-%d") %}
+        {% set tomorrow = (as_timestamp(now()) + 86400)|timestamp_custom("%Y-%m-%d") %}
+        {{ collection == tomorrow }}
+
+- platform: template
+  sensors:
+    epson_wf3620_ink_black_low:
+      friendly_name: 'EPSON WF-3620 Series Black ink low'
+      value_template: >
+        {{ states('sensor.epson_wf3620_ink_black') | int <
+          states('input_number.epson_wf3620_ink_low_threshold') | int }}
+    epson_wf3620_ink_magenta_low:
+      friendly_name: 'EPSON WF-3620 Series Magenta ink low'
+      value_template: >
+        {{ states('sensor.epson_wf3620_ink_magenta') | int <
+          states('input_number.epson_wf3620_ink_low_threshold') | int }}
+    epson_wf3620_ink_yellow_low:
+      friendly_name: 'EPSON WF-3620 Series Yellow ink low'
+      value_template: >
+        {{ states('sensor.epson_wf3620_ink_yellow') | int <
+          states('input_number.epson_wf3620_ink_low_threshold') | int }}
+    epson_wf3620_ink_cyan_low:
+      friendly_name: 'EPSON WF-3620 Series Cyan ink low'
+      value_template: >
+        {{ states('ssensor.epson_wf3620_ink_cyan') | int <
+          states('input_number.epson_wf3620_ink_low_threshold') | int }}

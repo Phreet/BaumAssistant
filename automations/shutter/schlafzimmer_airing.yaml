@@ -1,0 +1,55 @@
+- id: '1611944618678'
+  alias: Schlafzimmer - Garden shutter - Close when airing
+  description: When airing the Schlafzimmer by opening garden window, also control
+    shutter accordingly (when opened, close it again)
+  trigger:
+  - type: not_opened
+    platform: device
+    device_id: 84e6f0faf47c5e0f72214a41c94308c1
+    entity_id: binary_sensor.fenster_schlafzimmer_garten
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 5
+  condition:
+  - condition: device
+    device_id: a9b261a64617cd37f473cf5bdfac042b
+    domain: cover
+    entity_id: cover.shelly_shsw_25_40f52000d69a
+    type: is_position
+    above: 19
+    below: 21
+  action:
+  - service: cover.close_cover
+    data: {}
+    entity_id: cover.shelly_shsw_25_40f52000d69a
+  mode: single
+
+- id: '1611943950866'
+  alias: Schlafzimmer - Garden shutter - Open when airing
+  description: When airing the Schlafzimmer by opening garden window, also control
+    shutter accordingly (when closed, open to gap position)
+  trigger:
+  - type: opened
+    platform: device
+    device_id: 84e6f0faf47c5e0f72214a41c94308c1
+    entity_id: binary_sensor.fenster_schlafzimmer_garten
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 2
+  condition:
+  - condition: device
+    device_id: a9b261a64617cd37f473cf5bdfac042b
+    domain: cover
+    entity_id: cover.shelly_shsw_25_40f52000d69a
+    type: is_position
+    below: 19
+  action:
+  - service: cover.set_cover_position
+    data:
+      position: 20
+    entity_id: cover.shelly_shsw_25_40f52000d69a
+  mode: single

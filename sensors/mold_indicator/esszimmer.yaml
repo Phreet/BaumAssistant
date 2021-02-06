@@ -1,0 +1,21 @@
+  - platform: mold_indicator
+    name: Schimmelrisiko - Esszimmer
+    indoor_temp_sensor: sensor.multi_esszimmer_temperature
+    indoor_humidity_sensor: sensor.multi_esszimmer_humidity
+    outdoor_temp_sensor: sensor.openweathermap_temperature
+    calibration_factor: 1.5  # TBD
+
+  - platform: template
+    sensors:
+      schimmelrisikoklasse_esszimmer:
+        friendly_name: "Schimmelrisikoklasse - Esszimmer"
+        value_template: >-
+          {% if states('sensor.schimmelrisiko_esszimmer')|float > 65%}
+            Normal
+          {% elif states('sensor.schimmelrisiko_esszimmer')|float > 70 %}
+            Erhöht
+          {% elif states('sensor.schimmelrisiko_esszimmer')|float > 80 %}
+            Kritisch
+          {% else %}
+            Gering
+          {% endif %}

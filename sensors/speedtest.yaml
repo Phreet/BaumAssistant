@@ -1,0 +1,8 @@
+################################################################################
+#### Speedtest.net - Last Update State
+################################################################################
+  - platform: template
+    sensors:
+      speedtest_last_updated:
+        friendly_name: "Speedtest last updated"
+        value_template: "{{ as_timestamp(states.sensor.speedtest_download.last_updated) }}"

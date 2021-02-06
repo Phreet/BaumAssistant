@@ -1,0 +1,16 @@
+# https://community.home-assistant.io/t/updater-card-to-show-new-version/100923/7?u=mikael_kristensen
+
+#==============================
+#=== Currently installed HomeAssistant Core version
+#==============================
+  - platform: version
+    name: HomeAssistant Core - Installed Version
+
+#================================
+#=== Latest available HomeAssistant Core version
+#================================
+  - platform: version
+    name: HomeAssistant Core - Latest Version
+    beta: false
+    image: raspberrypi4-64
+    source: hassio

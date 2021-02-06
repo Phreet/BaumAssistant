@@ -1,0 +1,6 @@
+################################################################################
+#### Time since the last HomeAssistant core restart
+################################################################################
+  - platform: command_line
+    name: HomeAssistant - Failed logins 
+    command: "grep -c 'Login attempt' /config/home-assistant.log"

@@ -1,0 +1,12 @@
+################################################################################
+#### FRITZ!Box Call Monitor
+################################################################################
+  - platform: fritzbox_callmonitor
+    name: FritzBox Callmonitor
+    username: !secret fritzbox_user
+    password: !secret fritzbox_password
+    phonebook: 0
+    prefixes:
+      - '+49'
+      - '+4940'
+      - '040'

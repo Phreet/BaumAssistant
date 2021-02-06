@@ -1,0 +1,30 @@
+################################################################################
+### Light scenes for Gästezimmer                                             ###
+### Light bulb: Philips Hue White E27 (Bluetooth)                            ###
+################################################################################
+
+- id: '1611597511659'
+  name: Licht - Gästezimmer - Hell
+  icon: mdi:lightbulb-group
+  entities:
+    light.white_gastezimmer:
+      state: 'on'
+      brightness_pct: 100
+
+################################################################################
+- id: '1611597511851'
+  name: Licht - Gästezimmer - Gedimmt
+  icon: mdi:lightbulb-group
+  entities:
+    light.white_gastezimmer:
+      state: 'on'
+      brightness_pct: 30
+
+################################################################################
+- id: '1611597512581'
+  name: Licht - Gästezimmer - Nacht
+  icon: mdi:lightbulb-group
+  entities:
+    light.white_gastezimmer:
+      state: 'on'
+      brightness_pct: 2

@@ -1,0 +1,31 @@
+  - platform: history_stats
+    name: fenster_badezimmer_og_l_open_count_1d
+    entity_id: binary_sensor.fenster_badezimmer_og_l
+    state: 'on'
+    type: count
+    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+    end: '{{ now() }}'
+
+  - platform: history_stats
+    name: fenster_badezimmer_og_r_open_count_1d
+    entity_id: binary_sensor.fenster_badezimmer_og_r
+    state: 'on'
+    type: count
+    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+    end: '{{ now() }}'
+
+  - platform: history_stats
+    name: fenster_badezimmer_og_l_open_time_1d
+    entity_id: binary_sensor.fenster_badezimmer_og_l
+    state: 'on'
+    type: time
+    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+    end: '{{ now() }}'
+
+  - platform: history_stats
+    name: fenster_badezimmer_og_r_open_time_1d
+    entity_id: binary_sensor.fenster_badezimmer_og_r
+    state: 'on'
+    type: time
+    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+    end: '{{ now() }}'

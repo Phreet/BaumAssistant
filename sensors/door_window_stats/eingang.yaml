@@ -1,0 +1,15 @@
+  - platform: history_stats
+    name: tur_eingang_haustur_open_count_1d
+    entity_id: binary_sensor.tur_eingang_haustur
+    state: 'on'
+    type: count
+    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+    end: '{{ now() }}'
+
+  - platform: history_stats
+    name: tur_eingang_haustur_open_time_1d
+    entity_id: binary_sensor.tur_eingang_haustur
+    state: 'on'
+    type: time
+    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+    end: '{{ now() }}'

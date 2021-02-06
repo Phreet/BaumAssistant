@@ -1,0 +1,8 @@
+# Dropdown to select Argo40 fan mode
+  argon40_fanmode:
+    name: Fan Mode Selector
+    options:
+      - Automatic
+      - Manual
+    initial: Automatic
+    icon: 'mdi:fan'

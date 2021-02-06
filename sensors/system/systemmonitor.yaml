@@ -1,0 +1,29 @@
+################################################################################
+#### System monitor for general statistics
+#### Raspberry Pi and OS attributes
+################################################################################
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: disk_free
+      - type: disk_use
+      - type: memory_use_percent
+      - type: memory_free
+      - type: memory_use
+      - type: processor_temperature
+      - type: processor_use
+      - type: last_boot
+      - type: network_in
+        arg: eth0
+      - type: network_out
+        arg: eth0
+
+################################################################################
+#### Raspberry Pi CPU clock
+################################################################################
+  - platform: command_line
+    name: Processor clock
+    command: "/opt/vc/bin/vcgencmd measure_clock arm"
+    unit_of_measurement: "MHz"
+    value_template: '{{ value | regex_findall_index("=([0-9]*)", 0) | multiply(0.000001) | round(0) }}'

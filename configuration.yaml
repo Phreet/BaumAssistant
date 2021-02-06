@@ -1,0 +1,101 @@
+#====================================
+#== Default configuration of Home Assistant
+#====================================
+default_config:
+
+#====================================
+#=== Favicon and Page title
+#====================================
+favicon:
+  title: BaumAssistant
+  icon_path: /local/favicons/
+
+#====================================
+#=== Proxy live streams
+#====================================
+stream:
+
+#====================================
+#=== Luftdaten: monitor air quality
+#====================================
+luftdaten:
+  sensor_id: 29362
+  scan_interval: 3600
+  show_on_map: false
+  sensors:
+    monitored_conditions:
+      - P1
+      - P2
+      - temperature
+      - humidity
+      - pressure
+
+#====================================
+#=== Synology DSM
+#====================================
+synology_dsm:
+  - host: !secret synology_host
+    username: !secret synology_username
+    password: !secret synology_password
+    ssl: false
+
+#====================================
+#=== Argon ONE Pi4 Case and Fan
+#====================================
+argon40:
+
+#====================================
+#== Netatmo Presence
+#====================================
+netatmo:
+  client_id: !secret netatmo_client_id
+  client_secret: !secret netatmo_client_secret
+
+#====================================
+#=== BSH (Neff) Home Connect
+#====================================
+home_connect:
+  client_id: !secret home_connect_id
+  client_secret: !secret home_connect_secret
+  
+#====================================
+#=== InfluxDB
+#====================================
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: !secret influxdb_database
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
+
+#====================================
+#=== Text to speech
+#====================================
+tts:
+  - platform: google_translate
+
+
+sensor: !include_dir_merge_list sensors/
+input_number: !include input_number.yaml
+input_select: !include input_select.yaml
+input_boolean: !include input_boolean.yaml
+binary_sensor: !include binary_sensor.yaml
+light: !include lights.yaml
+group: !include groups.yaml
+script: !include scripts.yaml
+
+zone ui: !include zones.yaml
+zone manual: !include_dir_merge_list zones/
+
+# Scenes: created in the UI
+scene ui: !include scenes.yaml
+# Scenes: created manually in yaml
+scene manual: !include_dir_merge_list scenes/
+
+# Automations: created in the UI
+automation: !include automations.yaml
+# Automations: created manually in yaml
+#automation manual: !include_dir_merge_list automations/
+

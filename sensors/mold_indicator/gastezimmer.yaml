@@ -1,0 +1,21 @@
+  - platform: mold_indicator
+    name: Schimmelrisiko - Gästezimmer
+    indoor_temp_sensor: sensor.multi_gastezimmer_temperature
+    indoor_humidity_sensor: sensor.multi_gastezimmer_humidity
+    outdoor_temp_sensor: sensor.openweathermap_temperature
+    calibration_factor: 1.5  # TBD
+
+  - platform: template
+    sensors:
+      schimmelrisikoklasse_gastezimmer:
+        friendly_name: "Schimmelrisikoklasse - Gästezimmer"
+        value_template: >-
+          {% if states('sensor.schimmelrisiko_gastezimmer')|float > 65%}
+            Normal
+          {% elif states('sensor.schimmelrisiko_gastezimmer')|float > 70 %}
+            Erhöht
+          {% elif states('sensor.schimmelrisiko_gastezimmer')|float > 80 %}
+            Kritisch
+          {% else %}
+            Gering
+          {% endif %}

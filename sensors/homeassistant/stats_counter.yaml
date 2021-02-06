@@ -1,0 +1,29 @@
+  #================================
+  #=== Count the HomeAssistant sensors
+  #================================
+  - platform: template
+    sensors:
+      count_sensors:
+        friendly_name: "No. of sensors"
+        value_template: "{{ states.sensor | count }}"
+      count_binary_sensors:
+        friendly_name: "No. of binary sensors"
+        value_template: "{{ states.binary_sensor | count }}"
+      count_scripts:
+        friendly_name: "No. of scripts"
+        value_template: "{{ states.script | count }}"
+      count_automations:
+        friendly_name: "No. of automations"
+        value_template: "{{ states.automation | count }}"
+      count_device_trackers:
+        friendly_name: "No. of device tracker"
+        value_template: "{{ states.device_tracker | count }}"
+      count_switches:
+        friendly_name: "No. of switches"
+        value_template: "{{ states.switch | count }}"
+      count_zones:
+        friendly_name: "No. of zones"
+        value_template: "{{ states.zone | count }}"
+      count_scenes:
+        friendly_name: "No. of scenes"
+        value_template: "{{ states.scene | count }}"

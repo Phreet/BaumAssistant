@@ -1,0 +1,21 @@
+# INT to adjust Argon40 fan speed
+  argon40_fanspeed:
+    name: Fan Speed Slider
+    initial: 0
+    min: 0
+    max: 100
+    step: 5
+    mode: slider
+    unit_of_measurement: "%"
+    icon: 'mdi:fan'
+
+# INT to adjust threshold for empty EPSON cartridges
+  epson_wf3620_inklevel_threshold:
+    name: EPSON WF-3620 Series Ink Level Threshold
+    initial: 15
+    min: 0
+    max: 100
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    icon: 'mdi:water-percent-alert'

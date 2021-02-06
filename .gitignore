@@ -1,0 +1,23 @@
+################################################################################
+### BaumAssistant GitHub integration (public repo)                           ###
+### Backup complete /config (https://github.com/Phreet/BaumAssistant)        ###
+### By default: keep HACS custom_components and HACS community files         ### 
+################################################################################
+
+# Exclude BaumAssistant secrets
+secrets.yaml
+
+# Exclude private zones and areas
+zones/
+
+# Exclude Home Assistant log and database
+home-assistant.log
+*.db
+
+# Exclude auto-generated tts files (in use for Amazon Alexa devices)
+tts/
+
+# Exclude non-controllable .storage and add-on folders/files
+.cloud/
+.storage/
+.vscode/

@@ -1,0 +1,15 @@
+  - platform: history_stats
+    name: fenster_arbeitszimmer_open_count_1d
+    entity_id: binary_sensor.fenster_arbeitszimmer
+    state: 'on'
+    type: count
+    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+    end: '{{ now() }}'
+
+  - platform: history_stats
+    name: fenster_arbeitszimmer_open_time_1d
+    entity_id: binary_sensor.fenster_arbeitszimmer
+    state: 'on'
+    type: time
+    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+    end: '{{ now() }}'
