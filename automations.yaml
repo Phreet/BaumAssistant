@@ -123,54 +123,6 @@
   action:
   - scene: scene.licht_wohnzimmer_ambiente_loop
   mode: single
-- id: '1611946914070'
-  alias: Hue Dimmer - Schlafzimmer - Light on
-  description: ''
-  trigger:
-  - device_id: d329226937e37ac733231e82d0823e6d
-    domain: deconz
-    platform: device
-    type: remote_button_short_release
-    subtype: turn_on
-  condition:
-  - condition: time
-    after: '23:00:00'
-    before: 06:00:00
-  action:
-  - scene: scene.hue_schlafzimmer_nacht
-  mode: single
-- id: '1611946948712'
-  alias: Hue Dimmer - Schlafzimmer - Light on (Day)
-  description: ''
-  trigger:
-  - device_id: d329226937e37ac733231e82d0823e6d
-    domain: deconz
-    platform: device
-    type: remote_button_short_release
-    subtype: turn_on
-  condition:
-  - condition: time
-    after: 06:00:00
-    before: '23:00:00'
-  action:
-  - scene: scene.hue_schlafzimmer_ambiente
-  mode: single
-- id: '1611947597520'
-  alias: Hue Dimmer - Schlafzimmer - Light on (Test)
-  description: ''
-  trigger:
-  - device_id: d329226937e37ac733231e82d0823e6d
-    domain: deconz
-    platform: device
-    type: remote_button_short_release
-    subtype: turn_on
-  condition:
-  - condition: time
-    after: 06:00:00
-    before: '23:00:00'
-  action:
-  - scene: scene.hue_schlafzimmer_ambiente
-  mode: single
 - id: '1612483646732'
   alias: Hue Taster - Eingang - Licht an
   description: ''
@@ -220,8 +172,9 @@
         \ 'with_name') }} ({{ state_attr('sensor.phone', 'with') }})\n{% endif %}"
   mode: single
 - id: '1612655621849'
-  alias: Git - automatic commit and push of config
-  description: ''
+  alias: Git - täglicher commit und push der config
+  description: Täglicher commit der Änderung und push der config auf das public GitHub
+    repo
   trigger:
   - platform: time
     at: '22:00:00'
@@ -230,5 +183,75 @@
   - service: hassio.addon_stdin
     data:
       addon: a0d7b954_ssh
-      input: /config/automations/git_push_auto.sh
+      input: /config/git_push_auto.sh
+  mode: single
+- id: '1612729623230'
+  alias: Hue Dimmer - Schlafzimmer - Licht ein (Tag)
+  description: ''
+  trigger:
+  - device_id: d329226937e37ac733231e82d0823e6d
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition:
+  - condition: time
+    after: '7:00:00'
+    before: '23:00:00'
+  action:
+  - service: scene.turn_on
+    data:
+      transition: 1
+    entity_id: scene.hue_schlafzimmer_hell
+  mode: single
+- id: '1612729898004'
+  alias: Hue Dimmer - Schlafzimmer - Licht aus
+  description: ''
+  trigger:
+  - device_id: d329226937e37ac733231e82d0823e6d
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_off
+  condition: []
+  action:
+  - service: light.turn_off
+    data:
+      transition: 1
+    entity_id: light.schlafzimmer_deckenlicht
+  mode: single
+- id: '1612730147968'
+  alias: Hue Dimmer - Schlafzimmer - Licht ein (Nacht)
+  description: ''
+  trigger:
+  - device_id: d329226937e37ac733231e82d0823e6d
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition:
+  - condition: time
+    after: '23:00:00'
+    before: '7:00:00'
+  action:
+  - service: scene.turn_on
+    data:
+      transition: 1
+    entity_id: scene.hue_schlafzimmer_ambiente
+  mode: single
+- id: '1612730415941'
+  alias: Hue Dimmer - Schlafzimmer - Lichtszene 2
+  description: ''
+  trigger:
+  - device_id: d329226937e37ac733231e82d0823e6d
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: dim_down
+  condition: []
+  action:
+  - service: scene.turn_on
+    data:
+      transition: 1
+    entity_id: scene.hue_schlafzimmer_nacht
   mode: single
