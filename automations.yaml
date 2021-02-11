@@ -30,7 +30,7 @@
   description: Manuelles ausschalten des Lichts im Wohnzimmer (einfacher Druck auf
     Schalter links unten)
   trigger:
-  - device_id: 4fdb633208d18f26663b049098c311ae
+  - device_id: 55a523725e38ea18dce62d926333fa77
     domain: deconz
     platform: device
     type: remote_button_short_press
@@ -47,7 +47,7 @@
   description: Manually active a first living room light scene  - single click of
     both top buttons
   trigger:
-  - device_id: 4fdb633208d18f26663b049098c311ae
+  - device_id: 55a523725e38ea18dce62d926333fa77
     domain: deconz
     platform: device
     type: remote_button_short_release
@@ -61,7 +61,7 @@
   description: Manually active a second living room light scene  - single click of
     both bottom buttons
   trigger:
-  - device_id: 4fdb633208d18f26663b049098c311ae
+  - device_id: 55a523725e38ea18dce62d926333fa77
     domain: deconz
     platform: device
     type: remote_button_short_release
@@ -75,7 +75,7 @@
   description: Manually active a first living room light group  - single click of
     top right button
   trigger:
-  - device_id: 4fdb633208d18f26663b049098c311ae
+  - device_id: 55a523725e38ea18dce62d926333fa77
     domain: deconz
     platform: device
     type: remote_button_short_press
@@ -88,7 +88,7 @@
   alias: Hue Switch - Wohnzimmer - Lichtgruppe 2
   description: ''
   trigger:
-  - device_id: 4fdb633208d18f26663b049098c311ae
+  - device_id: 55a523725e38ea18dce62d926333fa77
     domain: deconz
     platform: device
     type: remote_button_short_press
@@ -101,7 +101,7 @@
   alias: Hue Switch - Wohnzimmer - Lichtszene 3
   description: ''
   trigger:
-  - device_id: 4fdb633208d18f26663b049098c311ae
+  - device_id: 55a523725e38ea18dce62d926333fa77
     domain: deconz
     platform: device
     type: remote_button_long_press
@@ -114,7 +114,7 @@
   alias: Hue Switch - Wohnzimmer - Colorloop
   description: ''
   trigger:
-  - device_id: 4fdb633208d18f26663b049098c311ae
+  - device_id: 55a523725e38ea18dce62d926333fa77
     domain: deconz
     platform: device
     type: remote_button_long_press
@@ -124,10 +124,10 @@
   - scene: scene.licht_wohnzimmer_ambiente_loop
   mode: single
 - id: '1612483646732'
-  alias: Hue Taster - Eingang - Licht an
+  alias: Hue Switch - Eingang - Licht an
   description: ''
   trigger:
-  - device_id: dbb76e56ba0e9889a8648ac6dc4dd321
+  - device_id: 481c7402cfa0e979560ab8a222c7e464
     domain: deconz
     platform: device
     type: remote_button_short_release
@@ -135,14 +135,15 @@
   condition: []
   action:
   - service: scene.turn_on
-    data: {}
+    data:
+      transition: 1
     entity_id: scene.licht_eingang_ambiente, scene.licht_flur_ambiente
   mode: single
 - id: '1612484496288'
-  alias: Hue Taster - Eingang - Licht aus
+  alias: Hue Switch - Eingang - Licht aus
   description: Test
   trigger:
-  - device_id: dbb76e56ba0e9889a8648ac6dc4dd321
+  - device_id: 481c7402cfa0e979560ab8a222c7e464
     domain: deconz
     platform: device
     type: remote_button_short_release
@@ -151,6 +152,8 @@
   action:
   - service: light.turn_off
     entity_id: light.eingang, light.treppenhaus, light.flur
+    data:
+      transition: 1
   mode: single
 - id: '1612529119404'
   alias: Notify about phone state
@@ -189,7 +192,7 @@
   alias: Hue Dimmer - Schlafzimmer - Licht ein (Tag)
   description: ''
   trigger:
-  - device_id: d329226937e37ac733231e82d0823e6d
+  - device_id: 00426b488d68b3b7e4ef6392206b0cf4
     domain: deconz
     platform: device
     type: remote_button_short_press
@@ -208,7 +211,7 @@
   alias: Hue Dimmer - Schlafzimmer - Licht aus
   description: ''
   trigger:
-  - device_id: d329226937e37ac733231e82d0823e6d
+  - device_id: 00426b488d68b3b7e4ef6392206b0cf4
     domain: deconz
     platform: device
     type: remote_button_short_press
@@ -224,7 +227,7 @@
   alias: Hue Dimmer - Schlafzimmer - Licht ein (Nacht)
   description: ''
   trigger:
-  - device_id: d329226937e37ac733231e82d0823e6d
+  - device_id: 00426b488d68b3b7e4ef6392206b0cf4
     domain: deconz
     platform: device
     type: remote_button_short_press
@@ -243,7 +246,7 @@
   alias: Hue Dimmer - Schlafzimmer - Lichtszene 2
   description: ''
   trigger:
-  - device_id: d329226937e37ac733231e82d0823e6d
+  - device_id: 00426b488d68b3b7e4ef6392206b0cf4
     domain: deconz
     platform: device
     type: remote_button_short_press

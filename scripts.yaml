@@ -7,3 +7,14 @@ door_bell_alexa_arbeitszimmer:
       media_content_type: custom
       media_content_id: Wird es heute regnen
   mode: single
+test_alexa_notify:
+  alias: Test Alexa notify
+  sequence:
+  - service: notify.alexa_media_echo_dot_arbeitszimmer
+    data:
+      message: Moin Philipp, es ist {{ states('sensor.multi_arbeitszimmer_temperature')
+        }} Grad warm
+      data:
+        type: tts
+  mode: single
+  icon: mdi:amazon
