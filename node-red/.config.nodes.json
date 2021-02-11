@@ -1463,7 +1463,7 @@
     "node-red-contrib-deconz": {
         "name": "node-red-contrib-deconz",
         "version": "1.2.0",
-        "local": false,
+        "local": true,
         "nodes": {
             "in": {
                 "name": "in",
@@ -1532,6 +1532,26 @@
                 "local": true,
                 "module": "node-red-contrib-deconz",
                 "file": "/config/node-red/node_modules/node-red-contrib-deconz/deconz.js"
+            }
+        }
+    },
+    "node-red-contrib-shelly": {
+        "name": "node-red-contrib-shelly",
+        "version": "1.5.3",
+        "local": true,
+        "nodes": {
+            "shelly": {
+                "name": "shelly",
+                "types": [
+                    "shelly-switch",
+                    "shelly-door",
+                    "shelly-roller-shutter",
+                    "shelly-dimmer"
+                ],
+                "enabled": true,
+                "local": true,
+                "module": "node-red-contrib-shelly",
+                "file": "/config/node-red/node_modules/node-red-contrib-shelly/shelly/99-shelly.js"
             }
         }
     }
