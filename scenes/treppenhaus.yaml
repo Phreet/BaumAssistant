@@ -1,1 +1,110 @@
-[]
+################################################################################
+### Light scenes for Treppenhaus                                             ###
+### Light bulbs: Philips Hue White Ambiance GU10 (Bluetooth)                 ###
+### min_mireds: 153 - max_mireds: 454                                        ###
+################################################################################
+
+- id: '1615308801781'
+  name: Licht - Treppenhaus - Kalt
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_treppenhaus_oo:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 153
+    light.ambiance_treppenhaus_ou:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 153
+    light.ambiance_treppenhaus_uo:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 153
+    light.ambiance_treppenhaus_uu:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 153
+
+- id: '1615418731725'
+  name: Licht - Treppenhaus - Neutral
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_treppenhaus_oo:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 233
+    light.ambiance_treppenhaus_ou:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 233
+    light.ambiance_treppenhaus_uo:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 233
+    light.ambiance_treppenhaus_uu:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 233
+
+- id: '1625418430015'
+  name: Licht - Treppenhaus - Warm
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_treppenhaus_oo:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 346
+    light.ambiance_treppenhaus_ou:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 346
+    light.ambiance_treppenhaus_uo:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 346
+    light.ambiance_treppenhaus_uu:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 346
+
+- id: '1625478438811'
+  name: Licht - Treppenhaus - Entspannt
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_treppenhaus_oo:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 447
+    light.ambiance_treppenhaus_ou:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 447
+    light.ambiance_treppenhaus_uo:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 447
+    light.ambiance_treppenhaus_uu:
+      state: 'on'
+      brightness_pct: 100
+      color_temp: 447
+
+- id: '1615308841436'
+  name: Licht - Treppenhaus - Ambiente
+  icon: mdi:lightbulb-group
+  entities:
+    light.ambiance_treppenhaus_oo:
+      state: 'on'
+      brightness: 204
+      color_temp: 390
+    light.ambiance_treppenhaus_ou:
+      state: 'on'
+      brightness: 101
+      color_temp: 230
+    light.ambiance_treppenhaus_uo:
+      state: 'on'
+      brightness: 204
+      color_temp: 390
+    light.ambiance_treppenhaus_uu:
+      state: 'on'
+      brightness: 101
+      color_temp: 230

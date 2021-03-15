@@ -7,6 +7,9 @@
 # Exclude BaumAssistant secrets
 secrets.yaml
 
+# Exclude private birthday list
+birthdays/
+
 # Exclude private zones and areas
 zones/
 

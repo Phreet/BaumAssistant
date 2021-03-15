@@ -124,7 +124,7 @@
   - scene: scene.licht_wohnzimmer_ambiente_loop
   mode: single
 - id: '1612483646732'
-  alias: Hue Switch - Eingang - Licht an
+  alias: Licht Eingang - An - Hue Switch
   description: ''
   trigger:
   - device_id: 481c7402cfa0e979560ab8a222c7e464
@@ -137,16 +137,17 @@
   - service: scene.turn_on
     data:
       transition: 1
-    entity_id: scene.licht_eingang_ambiente, scene.licht_flur_ambiente
+    target:
+      entity_id: scene.licht_eingang_warm
   mode: single
 - id: '1612484496288'
-  alias: Hue Switch - Eingang - Licht aus
+  alias: Licht Eingang - Aus - Hue Switch
   description: Test
   trigger:
   - device_id: 481c7402cfa0e979560ab8a222c7e464
     domain: deconz
     platform: device
-    type: remote_button_short_release
+    type: remote_button_short_press
     subtype: button_2
   condition: []
   action:
@@ -189,7 +190,7 @@
       input: /config/git_push_auto.sh
   mode: single
 - id: '1612729623230'
-  alias: Hue Dimmer - Schlafzimmer - Licht ein (Tag)
+  alias: Licht Schlafzimmer - Ein (Tag) - Hue Control
   description: ''
   trigger:
   - device_id: 00426b488d68b3b7e4ef6392206b0cf4
@@ -197,10 +198,15 @@
     platform: device
     type: remote_button_short_press
     subtype: turn_on
+  - device_id: f3edb7e81afb128c68df358f5922b769
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: button_1
   condition:
   - condition: time
     after: '7:00:00'
-    before: '23:00:00'
+    before: '22:30:00'
   action:
   - service: scene.turn_on
     data:
@@ -208,7 +214,7 @@
     entity_id: scene.hue_schlafzimmer_hell
   mode: single
 - id: '1612729898004'
-  alias: Hue Dimmer - Schlafzimmer - Licht aus
+  alias: Licht Schlafzimmer - Aus - Hue Control
   description: ''
   trigger:
   - device_id: 00426b488d68b3b7e4ef6392206b0cf4
@@ -216,6 +222,11 @@
     platform: device
     type: remote_button_short_press
     subtype: turn_off
+  - device_id: f3edb7e81afb128c68df358f5922b769
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: button_2
   condition: []
   action:
   - service: light.turn_off
@@ -224,7 +235,7 @@
     entity_id: light.schlafzimmer_deckenlicht
   mode: single
 - id: '1612730147968'
-  alias: Hue Dimmer - Schlafzimmer - Licht ein (Nacht)
+  alias: Licht Schlafzimmer - Ein (Nacht) - Hue Control
   description: ''
   trigger:
   - device_id: 00426b488d68b3b7e4ef6392206b0cf4
@@ -232,31 +243,20 @@
     platform: device
     type: remote_button_short_press
     subtype: turn_on
+  - device_id: f3edb7e81afb128c68df358f5922b769
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: button_1
   condition:
   - condition: time
-    after: '23:00:00'
+    after: '22:30:00'
     before: '7:00:00'
   action:
   - service: scene.turn_on
     data:
       transition: 1
     entity_id: scene.hue_schlafzimmer_ambiente
-  mode: single
-- id: '1612730415941'
-  alias: Hue Dimmer - Schlafzimmer - Lichtszene 2
-  description: ''
-  trigger:
-  - device_id: 00426b488d68b3b7e4ef6392206b0cf4
-    domain: deconz
-    platform: device
-    type: remote_button_short_press
-    subtype: dim_down
-  condition: []
-  action:
-  - service: scene.turn_on
-    data:
-      transition: 1
-    entity_id: scene.hue_schlafzimmer_nacht
   mode: single
 - id: '1613513334468'
   alias: Shopping - Zeige Einkaufsliste
@@ -271,4 +271,46 @@
       data:
         clickAction: /shopping-list
         url: /shopping-list
+  mode: single
+- id: '1615751487233'
+  alias: Hue Switch Eingang - Licht aus BaumHaus
+  description: Schaltet das gesamte Licht im BaumHaus aus (z.B. beim Verlassen des
+    Hauses)
+  trigger:
+  - device_id: 481c7402cfa0e979560ab8a222c7e464
+    domain: deconz
+    platform: device
+    type: remote_button_long_press
+    subtype: bottom_buttons
+  condition: []
+  action:
+  - service: notify.alexa_media_echo_flex_treppenhaus
+    data:
+      message: Licht im Haus wird ausgeschaltet
+      data:
+        type: tts
+  - delay: 00:00:20
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.baumhaus
+    data:
+      transition: 10
+  mode: single
+- id: '1615751682361'
+  alias: New Automation
+  description: ''
+  trigger:
+  - device_id: 481c7402cfa0e979560ab8a222c7e464
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: button_3
+  condition: []
+  action:
+  - service: notify.alexa_media_echo_flex_treppenhaus
+    data:
+      message: Licht wird ausgeschaltet
+      data:
+        type: tts
   mode: single
