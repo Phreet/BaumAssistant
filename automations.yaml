@@ -314,3 +314,17 @@
       data:
         type: tts
   mode: single
+- id: '1615934558420'
+  alias: FRITZ!Box 6591 - Guest WiFi angeschaltet - Push Login details
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.fritzbox_6591_cable_kdg_guest_wifi
+    to: 'on'
+  condition: []
+  action:
+  - service: notify.persistent_notification
+    data:
+      title: BaumHaus-Guest WiFi eingeschaltet
+      message: 'WLAN-SSID: BaumHaus-Guest <br> Password: test1234'
+  mode: single

@@ -18,3 +18,11 @@ test_alexa_notify:
         type: tts
   mode: single
   icon: mdi:amazon
+fritzbox_reconnect:
+  alias: FRITZ!Box 6591- Reconnect
+  sequence:
+  - service: fritzbox_tools.reconnect
+    data:
+      host: fritzbox_ip
+  mode: single
+  icon: mdi:router-wireless-settings
