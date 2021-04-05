@@ -2,31 +2,41 @@ const LitElement = customElements.get("hui-masonry-view") ? Object.getPrototypeO
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-const weatherIconsDay = {
-  clear: "day",
-  "clear-night": "night",
+const weatherIcons = {
   cloudy: "cloudy",
-  fog: "cloudy",
-  hail: "rainy-7",
-  lightning: "thunder",
-  "lightning-rainy": "thunder",
-  partlycloudy: "cloudy-day-3",
-  pouring: "rainy-6",
-  rainy: "rainy-5",
-  snowy: "snowy-6",
-  "snowy-rainy": "rainy-7",
-  sunny: "day",
-  windy: "cloudy",
-  "windy-variant": "cloudy-day-3",
-  exceptional: "!!",
+  hail: "hail",
+  pouring: "rain",
+  drizzle: "drizzle",
+  snowy: "snow",
+  "snowy-rainy": "sleet",
+  windy: "wind",
+  "windy-variant": "overcast"
+}
+
+const weatherIconsDay = {
+  ...weatherIcons,
+  clear: "clear-day",
+  "clear-day": "clear-day",
+  sunny: "clear-day",
+  overcast: "overcast-day",
+  fog: "fog-day",
+  lightning: "thunderstorms-day",
+  "lightning-rainy": "thunderstorms-day-rain",
+  partlycloudy: "partly-cloudy-day",
+  rainy: "partly-cloudy-day-rain"
 };
 
 const weatherIconsNight = {
-  ...weatherIconsDay,
-  clear: "night",
-  sunny: "night",
-  partlycloudy: "cloudy-night-3",
-  "windy-variant": "cloudy-night-3",
+  ...weatherIcons, 
+  clear: "clear-night",
+  "clear-night": "clear-night",
+  sunny: "clear-night",
+  overcast: "overcast-night",
+  fog: "fog-night",
+  lightning: "thunderstorms-night",
+  "lightning-rainy": "thunderstorms-night-rain", 
+  partlycloudy: "partly-cloudy-night",
+  rainy: "partly-cloudy-night-rain"
 };
 
 const windDirections = [
@@ -53,9 +63,9 @@ window.customCards = window.customCards || [];
 window.customCards.push({
   type: "weather-card",
   name: "Weather Card",
-  description: "A custom weather card with animated icons.",
+  description: "🌧 Customizable weather card with animated icons",
   preview: true,
-  documentationURL: "https://github.com/bramkragten/weather-card",
+  documentationURL: "https://github.com/Phreet/weather-card",
 });
 
 const fireEvent = (node, type, detail, options) => {
@@ -74,15 +84,6 @@ const fireEvent = (node, type, detail, options) => {
 function hasConfigOrEntityChanged(element, changedProps) {
   if (changedProps.has("_config")) {
     return true;
-  }
-
-  const oldHass = changedProps.get("hass");
-  if (oldHass) {
-    return (
-      oldHass.states[element._config.entity] !==
-        element.hass.states[element._config.entity] ||
-      oldHass.states["sun.sun"] !== element.hass.states["sun.sun"]
-    );
   }
 
   return true;
@@ -131,18 +132,9 @@ class WeatherCard extends LitElement {
 
     if (!stateObj) {
       return html`
-        <style>
-          .not-found {
-            flex: 1;
-            background-color: yellow;
-            padding: 8px;
-          }
-        </style>
-        <ha-card>
-          <div class="not-found">
-            Entity not available: ${this._config.entity}
-          </div>
-        </ha-card>
+        <hui-warning>
+          Entity not available: ${this._config.entity}
+        </hui-warning>
       `;
     }
 
@@ -150,9 +142,7 @@ class WeatherCard extends LitElement {
       <ha-card @click="${this._handleClick}">
         ${this._config.current !== false ? this.renderCurrent(stateObj) : ""}
         ${this._config.details !== false ? this.renderDetails(stateObj) : ""}
-        ${this._config.forecast !== false
-          ? this.renderForecast(stateObj.attributes.forecast)
-          : ""}
+        ${this._config.forecast !== false ? this.renderForecast(stateObj.attributes.forecast) : ""}
       </ha-card>
     `;
   }
@@ -184,60 +174,70 @@ class WeatherCard extends LitElement {
   }
 
   renderDetails(stateObj) {
-    const sun = this.hass.states["sun.sun"];
-    let next_rising;
-    let next_setting;
+    this.numberElements++;
 
-    if (sun) {
-      next_rising = new Date(sun.attributes.next_rising);
-      next_setting = new Date(sun.attributes.next_setting);
+    const items = [];
+
+    if (stateObj.attributes.humidity != null) {
+      items.push(html`
+        <ha-icon icon="mdi:water-percent"></ha-icon>
+        ${stateObj.attributes.humidity}<span class="unit"> % </span>
+      `);
     }
 
-    this.numberElements++;
+    if (stateObj.attributes.wind_speed != null) {
+      items.push(html`
+        <ha-icon icon="mdi:weather-windy"></ha-icon>
+        ${stateObj.attributes.wind_bearing != null
+          ? windDirections[
+              parseInt((stateObj.attributes.wind_bearing + 11.25) / 22.5)
+            ]
+          : ""}
+        ${stateObj.attributes.wind_speed}<span class="unit">
+          ${this.getUnit("length")}/h
+        </span>
+      `);
+    }
+
+    if (stateObj.attributes.pressure != null && !this._config.hide_pressure) {
+      items.push(html`
+        <ha-icon icon="mdi:gauge"></ha-icon>
+        ${stateObj.attributes.pressure}
+        <span class="unit"> ${this.getUnit("air_pressure")} </span>
+      `);
+    }
+
+    if (stateObj.attributes.visibility != null && !this._config.hide_visibility) {
+      items.push(html`
+        <ha-icon icon="mdi:weather-fog"></ha-icon> ${stateObj.attributes
+          .visibility}<span class="unit"> ${this.getUnit("length")} </span>
+      `);
+    }
+
+    const sun = this.hass.states['sun.sun'];
+    if (sun) {
+      const next_rising = new Date(sun.attributes.next_rising);
+      const next_setting = new Date(sun.attributes.next_setting);
+
+      if (items.length % 2 == 1) {
+        items.push(html`<div />`);
+      }
+
+      items.push(html`
+        <ha-icon icon="mdi:weather-sunset-up"></ha-icon>
+        ${next_rising.toLocaleTimeString()}
+      `);
+      items.push(html`
+        <ha-icon icon="mdi:weather-sunset-down"></ha-icon>
+        ${next_setting.toLocaleTimeString()}
+      `);
+    }
+
+    const listItems = items.map(item => html`<li>${item}</li>`);
 
     return html`
       <ul class="variations ${this.numberElements > 1 ? "spacer" : ""}">
-        <li>
-          <ha-icon icon="mdi:water-percent"></ha-icon>
-          ${stateObj.attributes.humidity}<span class="unit"> % </span>
-        </li>
-        <li>
-          <ha-icon icon="mdi:weather-windy"></ha-icon> ${windDirections[
-            parseInt((stateObj.attributes.wind_bearing + 11.25) / 22.5)
-          ]}
-          ${stateObj.attributes.wind_speed}<span class="unit">
-            ${this.getUnit("length")}/h
-          </span>
-        </li>
-        <li>
-          <ha-icon icon="mdi:gauge"></ha-icon>
-          ${stateObj.attributes.pressure}
-          <span class="unit">
-            ${this.getUnit("air_pressure")}
-          </span>
-        </li>
-        <li>
-          <ha-icon icon="mdi:weather-fog"></ha-icon> ${stateObj.attributes
-            .visibility}<span class="unit">
-            ${this.getUnit("length")}
-          </span>
-        </li>
-        ${next_rising
-          ? html`
-              <li>
-                <ha-icon icon="mdi:weather-sunset-up"></ha-icon>
-                ${next_rising.toLocaleTimeString()}
-              </li>
-            `
-          : ""}
-        ${next_setting
-          ? html`
-              <li>
-                <ha-icon icon="mdi:weather-sunset-down"></ha-icon>
-                ${next_setting.toLocaleTimeString()}
-              </li>
-            `
-          : ""}
+        ${listItems}
       </ul>
     `;
   }
@@ -288,18 +288,14 @@ class WeatherCard extends LitElement {
                       </div>
                     `
                   : ""}
-                ${!this._config.hide_precipitation &&
-                daily.precipitation !== undefined &&
-                daily.precipitation !== null
+                ${!this._config.hide_precipitation && daily.precipitation !== undefined && daily.precipitation !== null
                   ? html`
                       <div class="precipitation">
                         ${Math.round(daily.precipitation*10)/10} ${this.getUnit("precipitation")}
                       </div>
                     `
                   : ""}
-                ${!this._config.hide_precipitation &&
-                daily.precipitation_probability !== undefined &&
-                daily.precipitation_probability !== null
+                ${!this._config.hide_precipitation && daily.precipitation_probability !== undefined && daily.precipitation_probability !== null
                   ? html`
                       <div class="precipitation_probability">
                         ${Math.round(daily.precipitation_probability)} ${this.getUnit("precipitation_probability")}
@@ -315,13 +311,9 @@ class WeatherCard extends LitElement {
 
   getWeatherIcon(condition, sun) {
     return `${
-      this._config.icons
-        ? this._config.icons
-        : "https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/icons/"
+      this._config.icons ? this._config.icons : "./icons/"
     }${
-      sun && sun.state == "below_horizon"
-        ? weatherIconsNight[condition]
-        : weatherIconsDay[condition]
+      sun && sun.state == "below_horizon" ? weatherIconsNight[condition] : weatherIconsDay[condition]
     }.svg`;
   }
 
@@ -463,12 +455,12 @@ class WeatherCard extends LitElement {
         text-align: center;
         color: var(--primary-text-color);
         border-right: 0.1em solid #d9d9d9;
-        line-height: 2;
+        line-height: 1;
         box-sizing: border-box;
       }
 
       .dayname {
-        text-transform: uppercase;
+        text-transform: none;
       }
 
       .forecast .day:first-child {
@@ -491,20 +483,22 @@ class WeatherCard extends LitElement {
       .precipitation {
         color: var(--primary-text-color);
         font-weight: 300;
+        margin-top: 5px;
       }
 
       .icon.bigger {
-        width: 10em;
-        height: 10em;
-        margin-top: -4em;
+        width: 8em;
+        height: 8em;
+        margin-top: -35px;
+        left: 10px
         position: absolute;
-        left: 0em;
       }
 
       .icon {
-        width: 50px;
-        height: 50px;
-        margin-right: 5px;
+        width: 45px;
+        height: 45px;
+        margin-top: 5px;
+        margin-bottom: 5px;
         display: inline-block;
         vertical-align: middle;
         background-size: contain;
