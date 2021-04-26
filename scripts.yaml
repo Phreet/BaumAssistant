@@ -1,12 +1,3 @@
-door_bell_alexa_arbeitszimmer:
-  alias: Door Bell Alexa
-  sequence:
-  - service: media_player.play_media
-    data:
-      entity_id: media_player.echo_kuche
-      media_content_type: custom
-      media_content_id: Wird es heute regnen
-  mode: single
 test_alexa_notify:
   alias: Test Alexa notify
   sequence:

@@ -175,20 +175,6 @@
         \  Talking to {{ state_attr('sensor.fritz_box_6591_cable_kdg_call_monitor_fritzbox_callmonitor',\
         \ 'with_name') }} ({{ state_attr('sensor.phone', 'with') }})\n{% endif %}"
   mode: single
-- id: '1612655621849'
-  alias: Git - täglicher commit und push der config
-  description: Täglicher commit der Änderung und push der config auf das public GitHub
-    repo
-  trigger:
-  - platform: time
-    at: '22:00:00'
-  condition: []
-  action:
-  - service: hassio.addon_stdin
-    data:
-      addon: a0d7b954_ssh
-      input: /config/git_push_auto.sh
-  mode: single
 - id: '1613513334468'
   alias: Shopping - Zeige Einkaufsliste
   description: ''
@@ -274,4 +260,45 @@
           category: mullabfuhr
         apns_headers:
           apns-collapse-id: blaue-Tonne
+  mode: single
+- id: '1619304793653'
+  alias: Netatmo - Alarm in der Nacht
+  description: ''
+  trigger:
+  - platform: event
+    event_type: netatmo_event
+    event_data:
+      data:
+        event_type: human
+  condition:
+  - condition: time
+    after: 00:00
+    before: 07:00
+  action:
+  - service: notify.persistent_notification
+    data:
+      message: Your message goes here
+      title: 'Achtung: Person auf Grundstück'
+  - service: light.turn_on
+    target:
+      entity_id:
+      - light.ambiance_eingang_vorne
+      - light.esszimmer_esstisch
+      - light.kuche_deckenlicht
+    data:
+      brightness: 255
+      flash: short
+  - delay:
+      hours: 0
+      minutes: 1
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.ambiance_eingang_vorne
+      - light.esszimmer_esstisch
+      - light.kuche_deckenlicht
+    data:
+      transition: 5
   mode: single
