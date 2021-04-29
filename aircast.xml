@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<aircast>
+<common>
+<enabled>1</enabled>
+<stop_receiver>0</stop_receiver>
+<media_volume>1.0000</media_volume>
+<latency></latency>
+<codec>flac</codec>
+<artwork></artwork>
+<drift>0</drift>
+<metadata>1</metadata>
+</common>
+<main_log>info</main_log>
+<cast_log>info</cast_log>
+<util_log>warn</util_log>
+<log_limit>-1</log_limit>
+<max_players>32</max_players>
+<ports>0:0</ports>
+<binding>?</binding>
+<device>
+<udn>3a52d6149c4e6d38368029da910d3314</udn>
+<name>Wohnzimmer+</name>
+<mac>cc:cc:79:77:96:d5</mac>
+<enabled>1</enabled>
+</device>
+</aircast>

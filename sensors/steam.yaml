@@ -6,6 +6,9 @@
   - platform: steam_online
     api_key: !secret steam_key
     accounts:
+      - 76561197970707049  # phReeT
       - 76561198015183112  # Immerwach
       - 76561198038063670  # fearAndloathin'
-      - 76561197970707049  # phReeT
+      - 76561197997765298  # Dannypanda 
+      - 76561197960752923  # Zornomatorium
+      - 76561197967169824  # men jag talar inte svenska

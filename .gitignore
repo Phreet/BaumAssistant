@@ -6,6 +6,7 @@
 
 # Exclude BaumAssistant secrets
 secrets.yaml
+www/secrets/
 
 # Exclude private birthday list
 birthdays/
@@ -25,3 +26,4 @@ tts/
 .storage/
 .vscode/
 .ssh/
+

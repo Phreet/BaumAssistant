@@ -25,4 +25,4 @@
   entities:
     light.white_gastezimmer:
       state: 'on'
-      brightness: 1
+      brightness: 3
