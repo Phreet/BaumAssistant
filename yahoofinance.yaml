@@ -1,5 +1,9 @@
   show_trending_icon: true
   decimal_places: 2
+  include_post_values: false
+  include_pre_values: false
+  include_fifty_day_values: false
+  include_two_hundred_day_values: false
   scan_interval:
     hours: 0.25
   symbols:

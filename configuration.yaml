@@ -18,7 +18,9 @@ favicon:
 #====================================
 stream:
 
-
+#====================================
+#=== Recorder options
+#====================================
 recorder:
   auto_purge: true
   purge_keep_days: 15
@@ -65,8 +67,8 @@ synology_dsm:
 #=== Argon ONE Pi4 Case and Fan
 #====================================
 spotify:
-  client_id:  !secret spotify_id
-  client_secret:  !secret spotify_secret
+  client_id: !secret spotify_id
+  client_secret: !secret spotify_secret
 
 #====================================
 #=== Argon ONE Pi4 Case and Fan

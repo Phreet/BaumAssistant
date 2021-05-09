@@ -33,12 +33,14 @@
     name: Arbeitszimmer
     entities:
       - light.arbeitszimmer_hue_play
+      - light.hue_go_obergeschoss
 
   - platform: group
     name: Obergeschoß
     entities:
       - light.schlafzimmer_deckenlicht
       - light.arbeitszimmer_hue_play
+
 
 ################################################################################
 ### Light groups: Durchgang / Aufgang                                        ###
@@ -94,6 +96,7 @@
       - light.eingang
       - light.flur
 
+
 ################################################################################
 ### Light groups: Erdgeschoß                                                 ###
 ################################################################################
@@ -108,7 +111,7 @@
     name: Wohnzimmer
     entities:
       - light.wohnzimmer_stehlampe
-      - light.hue_go
+      - light.hue_go_erdgeschoss
       - light.white_wohnzimmer_decke
 
   - platform: group
@@ -158,6 +161,18 @@
       - light.wohnzimmer
       - light.white_gastezimmer
 
+
+################################################################################
+### Light groups: Erdgeschoß                                                 ###
+################################################################################
+
+  - platform: group
+    name: Hue Go
+    entities:
+      - light.hue_go_erdgeschoss
+      - light.hue_go_obergeschoss
+
+
 ################################################################################
 ### Light groups: BaumHaus                                                   ###
 ################################################################################
@@ -169,3 +184,4 @@
       - light.obergeschoss
       - light.durchgang
       - light.treppenhaus
+      - light.hue_go
