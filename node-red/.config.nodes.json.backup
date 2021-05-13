@@ -1507,7 +1507,7 @@
                     "serial request",
                     "serial-port"
                 ],
-                "enabled": true,
+                "enabled": false,
                 "local": false,
                 "user": false,
                 "module": "node-red-node-serialport",
@@ -1660,7 +1660,7 @@
         "name": "node-red-node-email",
         "version": "1.12.0",
         "local": false,
-        "user": false,
+        "user": true,
         "nodes": {
             "email": {
                 "name": "email",
