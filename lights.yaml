@@ -148,7 +148,7 @@
       - light.esszimmer_deckenlicht
 
   - platform: group
-    name: Essbereich
+    name: Wohnküche
     entities:
       - light.esszimmer
       - light.kuche
