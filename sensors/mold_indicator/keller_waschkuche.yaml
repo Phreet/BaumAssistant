@@ -1,0 +1,23 @@
+  - platform: mold_indicator
+    name: 'Schimmelrisiko - Keller - Waschküche'
+    indoor_temp_sensor: sensor.multi_keller_waschkuche_temperature
+    indoor_humidity_sensor: sensor.multi_keller_waschkuche_humidity
+    outdoor_temp_sensor: sensor.openweathermap_temperature
+    calibration_factor: 1.5  # TBD
+
+  - platform: template
+    sensors:
+      schimmelrisikoklasse_keller_waschkuche:
+        friendly_name: 'Schimmelrisikoklasse - Keller - Waschküche'
+        value_template: >-
+          {% set indikator = states('sensor.schimmelrisiko_keller_waschkuche') | float %}
+          
+          {% if 65 <= indikator < 70 %}
+            Normal
+          {% elif 70 <= indikator < 80 %}
+            Erhöht
+          {% elif indikator >= 80 %}
+            Kritisch
+          {% else %}
+            Gering
+          {% endif %}

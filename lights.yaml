@@ -38,8 +38,8 @@
   - platform: group
     name: Obergeschoß
     entities:
-      - light.schlafzimmer_deckenlicht
-      - light.arbeitszimmer_hue_play
+      - light.schlafzimmer
+      - light.arbeitszimmer
 
 
 ################################################################################

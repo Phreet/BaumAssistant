@@ -1,0 +1,23 @@
+  - platform: mold_indicator
+    name: Schimmelrisiko - Wohnküche
+    indoor_temp_sensor: sensor.multi_wohnkuche_temperature
+    indoor_humidity_sensor: sensor.multi_wohnkuche_humidity
+    outdoor_temp_sensor: sensor.openweathermap_temperature
+    calibration_factor: 1.5  # TBD
+
+  - platform: template
+    sensors:
+      schimmelrisikoklasse_wohnkuche:
+        friendly_name: "Schimmelrisikoklasse - Wohnküche"
+        value_template: >-
+          {% set indikator = states('sensor.schimmelrisiko_wohnkuche') | float %}
+          
+          {% if 65 <= indikator < 70 %}
+            Normal
+          {% elif 70 <= indikator < 80 %}
+            Erhöht
+          {% elif indikator >= 80 %}
+            Kritisch
+          {% else %}
+            Gering
+          {% endif %}
