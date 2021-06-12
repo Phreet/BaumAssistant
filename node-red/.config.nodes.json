@@ -867,7 +867,7 @@
     },
     "node-red-contrib-time-range-switch": {
         "name": "node-red-contrib-time-range-switch",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "local": false,
         "user": false,
         "nodes": {
@@ -1337,7 +1337,7 @@
     },
     "node-red-node-serialport": {
         "name": "node-red-node-serialport",
-        "version": "0.14.0",
+        "version": "0.14.1",
         "local": false,
         "user": false,
         "nodes": {
@@ -1437,7 +1437,7 @@
     },
     "node-red-contrib-shelly": {
         "name": "node-red-contrib-shelly",
-        "version": "1.7.0",
+        "version": "1.7.1",
         "local": true,
         "user": true,
         "nodes": {

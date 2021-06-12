@@ -6,7 +6,7 @@
     "dependencies": {
         "node-red-contrib-home-assistant-websocket": "~0.33.1",
         "node-red-contrib-loop-processing": "~0.5.1",
-        "node-red-contrib-shelly": "~1.7.0",
+        "node-red-contrib-shelly": "~1.7.1",
         "node-red-contrib-sunevents": "~3.0.3",
         "node-red-dashboard": "~2.29.1",
         "node-red-node-base64": "~0.3.0",

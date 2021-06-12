@@ -494,8 +494,8 @@
     },
     "node-red-contrib-home-assistant-websocket": {
         "name": "node-red-contrib-home-assistant-websocket",
-        "version": "0.33.0",
-        "local": false,
+        "version": "0.33.1",
+        "local": true,
         "user": true,
         "nodes": {
             "all": {
@@ -522,10 +522,10 @@
                     "ha-zone"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "user": false,
                 "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/opt/node_modules/node-red-contrib-home-assistant-websocket/dist/index.js"
+                "file": "/config/node-red/node_modules/node-red-contrib-home-assistant-websocket/dist/index.js"
             }
         }
     },
@@ -1437,7 +1437,7 @@
     },
     "node-red-contrib-shelly": {
         "name": "node-red-contrib-shelly",
-        "version": "1.5.3",
+        "version": "1.7.1",
         "local": true,
         "user": true,
         "nodes": {
@@ -1447,7 +1447,8 @@
                     "shelly-switch",
                     "shelly-door",
                     "shelly-roller-shutter",
-                    "shelly-dimmer"
+                    "shelly-dimmer",
+                    "shelly-rgbw2"
                 ],
                 "enabled": true,
                 "local": true,
@@ -1455,8 +1456,7 @@
                 "module": "node-red-contrib-shelly",
                 "file": "/config/node-red/node_modules/node-red-contrib-shelly/shelly/99-shelly.js"
             }
-        },
-        "pending_version": "1.7.0"
+        }
     },
     "node-red-contrib-loop-processing": {
         "name": "node-red-contrib-loop-processing",
