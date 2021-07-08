@@ -3,16 +3,16 @@
 ### Observed instances: all windows and doors                                ###
 ################################################################################
 
-  - platform: template
-    sensors:
-      fenster_tur_last_opened:
-        friendly_name: 'Window/Door - Last Opened'
-        unique_id: 'window_door_last_opened'
-        value_template: >-
-          {% set sensors = [binary_sensor.fenster_arbeitszimmer, binary_sensor.fenster_badezimmer_eg, binary_sensor.fenster_badezimmer_og_l, binary_sensor.fenster_badezimmer_og_r, binary_sensor.fenster_esszimmer, binary_sensor.fenster_gastezimmer, binary_sensor.fenster_kinderzimmer, binary_sensor.fenster_kuche_raum, binary_sensor.fenster_kuche_tresen, binary_sensor.fenster_schlafzimmer_balkon, binary_sensor.fenster_schlafzimmer_garten, binary_sensor.fenster_treppenhaus, binary_sensor.tur_eingang_haustur, binary_sensor.tur_keller_technik, binary_sensor.tur_wohnzimmer_terrasse] %}
+#   - platform: template
+#     sensors:
+#       fenster_tur_last_opened:
+#         friendly_name: 'Window/Door - Last Opened'
+#         unique_id: 'window_door_last_opened'
+#         value_template: >-
+#           {% set sensors = [binary_sensor.fenster_arbeitszimmer, binary_sensor.fenster_badezimmer_eg, binary_sensor.fenster_badezimmer_og_l, binary_sensor.fenster_badezimmer_og_r, binary_sensor.fenster_esszimmer, binary_sensor.fenster_gastezimmer, binary_sensor.fenster_kinderzimmer, binary_sensor.fenster_kuche_raum, binary_sensor.fenster_kuche_tresen, binary_sensor.fenster_schlafzimmer_balkon, binary_sensor.fenster_schlafzimmer_garten, binary_sensor.fenster_treppenhaus, binary_sensor.tur_eingang_haustur, binary_sensor.tur_keller_technik, binary_sensor.tur_wohnzimmer_terrasse] %}
 
-          {% for sensor in sensors %}
-            {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(state='on') | max) %}
-              {{ sensor.name }}
-            {% endif %}
-          {% endfor %}
+#           {% for sensor in sensors %}
+#             {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(state='on') | max) %}
+#               {{ sensor.name }}
+#             {% endif %}
+#           {% endfor %}
