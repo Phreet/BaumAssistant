@@ -50,17 +50,17 @@ yahoofinance: !include yahoofinance.yaml
 #====================================
 #=== Luftdaten: monitor air quality
 #====================================
-luftdaten:
-  sensor_id: 29362
-  scan_interval: 3600
-  show_on_map: false
-  sensors:
-    monitored_conditions:
-      - P1
-      - P2
-      - temperature
-      - humidity
-      - pressure
+#luftdaten:
+#  sensor_id: 29362
+#  scan_interval: 3600
+#  show_on_map: false
+#  sensors:
+#    monitored_conditions:
+#      - P1
+#      - P2
+#      - temperature
+#      - humidity
+#      - pressure
 
 #====================================
 #=== Synology DSM
