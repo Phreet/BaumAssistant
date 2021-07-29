@@ -1,3 +1,9 @@
+################################################################################
+### Yahoo Finance integration - display stock market charts                  ###
+### https://github.com/iprak/yahoofinance                                    ###
+### Scan interval: set to 5min                                               ###
+################################################################################
+
   show_trending_icon: true
   decimal_places: 3
   include_post_values: false
@@ -5,22 +11,25 @@
   include_fifty_day_values: false
   include_two_hundred_day_values: false
   scan_interval:
-    hours: 0.1
+    hours: 0.083
   symbols:
+    # Technology stocks
+    - symbol: AAPL
+      target_currency: USD
     - symbol: LHA.DE
+      target_currency: EUR
+    # Automotive stocks
+    - symbol: VOW.DE
       target_currency: EUR
     - symbol: TL0.DE
       target_currency: EUR
+    # Crypto currency
     - symbol: BTC-USD
       target_currency: USD
     - symbol: ETH-USD
       target_currency: USD
     - symbol: DOGE-USD
       target_currency: USD
-    - symbol: AAPL
-      target_currency: USD
-    - symbol: VOW.DE
-      target_currency: EUR
     - symbol: ^XRPLX
       target_currency: USD
     - symbol: RVN-USD

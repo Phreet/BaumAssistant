@@ -12,6 +12,7 @@
 
   - platform: group
     name: Schlafzimmer - Deckenlicht
+    #unique_id: 40222f67-b935-4024-aad7-39c72b4a0bb7
     entities:
       - light.white_schlafzimmer_1
       - light.white_schlafzimmer_2
@@ -20,23 +21,27 @@
 
   - platform: group
     name: Schlafzimmer
+    #unique_id: 8f593185-a73e-4008-ae30-b41a23524711
     entities:
       - light.schlafzimmer_deckenlicht
 
   - platform: group
     name: Arbeitszimmer - Hue Play
+    #unique_id: ce7c2e86-aec2-492e-8380-00da5afcb06b
     entities:
       - light.hue_play_1
       - light.hue_play_2
 
   - platform: group
     name: Arbeitszimmer
+    #unique_id: f635a924-33a9-4175-9e2b-386232296102
     entities:
       - light.arbeitszimmer_hue_play
       - light.hue_go_obergeschoss
 
   - platform: group
     name: Obergeschoß
+    #unique_id: e3df7f9d-8aed-49d9-ab8c-872ec458498b
     entities:
       - light.schlafzimmer
       - light.arbeitszimmer
@@ -48,24 +53,28 @@
 
   - platform: group
     name: Treppenhaus - Strahler Oben
+    #unique_id: 1e6d2a0c-b373-4616-ab24-92be8f6816c2
     entities:
       - light.ambiance_treppenhaus_oo
       - light.ambiance_treppenhaus_ou
 
   - platform: group
     name: Treppenhaus - Strahler Unten
+    #unique_id: 7493b5fc-1613-4540-9189-55a233423e60
     entities:
       - light.ambiance_treppenhaus_uo
       - light.ambiance_treppenhaus_uu
 
   - platform: group
     name: Treppenhaus
+    #unique_id: 781ec89e-cae3-4aa9-ad70-39c6cd5d20b6
     entities:
       - light.treppenhaus_strahler_oben
       - light.treppenhaus_strahler_unten
 
   - platform: group
     name: Eingang
+    #unique_id: b0f39fa3-ed78-47a8-bf63-749a5a5d0044
     entities:
       - light.ambiance_eingang_vorne
       - light.ambiance_eingang_mitte
@@ -73,24 +82,28 @@
 
   - platform: group
     name: Flur
+    #unique_id: e54a58be-00fa-42f6-bfe0-d56282e55b02
     entities:
       - light.ambiance_flur_vorne
       - light.ambiance_flur_hinten
 
   - platform: group
     name: Durchgang
+    #unique_id: 3ff40f38-8ad8-4965-ab31-ca38b3a091d3
     entities:
       - light.flur
       - light.eingang
 
   - platform: group
     name: Aufgang
+    #unique_id: 16cdbd1f-15ae-4ce5-853f-5bd63f13771d
     entities:
       - light.treppenhaus
       - light.eingang
 
   - platform: group
     name: Zugang
+    #unique_id: b6d95cdb-d97a-417c-b7a9-8dce081e585e
     entities:
       - light.treppenhaus
       - light.eingang
@@ -103,6 +116,7 @@
 
   - platform: group
     name: Wohnzimmer - Stehlampe
+    #unique_id: 4f04fad6-2586-48a4-86f1-56834fcd72c6
     entities:
       - light.color_wohnzimmer_b
       - light.color_wohnzimmer_w
@@ -110,6 +124,7 @@
 
   - platform: group
     name: Wohnzimmer
+    #unique_id: 905752b6-e127-4bac-836f-a034622cf366
     entities:
       - light.wohnzimmer_stehlampe
       - light.hue_go_erdgeschoss
@@ -117,6 +132,7 @@
 
   - platform: group
     name: Küche - Deckenlicht
+    #unique_id: 35af29d0-f174-45fa-b54c-2b1076d447e5
     entities:
       - light.ambiance_kuche_kuhlschrank
       - light.ambiance_kuche_backofen
@@ -124,12 +140,14 @@
 
   - platform: group
     name: Küche
+    #unique_id: d7c16090-c665-4b1e-a31c-412c9cc3c1f7
     entities:
       - light.kuche_deckenlicht
       - light.white_tresen
 
   - platform: group
     name: Esszimmer - Deckenlicht
+    #unique_id: d2776708-80c2-4af1-94ae-b734dc4cbb7e
     entities:
       - light.ambiance_esszimmer_separee
       - light.ambiance_esszimmer_treppe
@@ -138,12 +156,14 @@
 
   - platform: group
     name: Esszimmer - Esstisch
+    #unique_id: e52518a3-d4f6-4271-9b49-7e90554da428
     entities:
       - light.ambiance_esstisch_1
       - light.ambiance_esstisch_2
 
   - platform: group
     name: Esszimmer
+    #unique_id: 4daa6496-efc1-4a31-b188-cc8f12c67424
     entities:
       - light.esszimmer_esstisch
       - light.esszimmer_deckenlicht
@@ -151,12 +171,14 @@
 
   - platform: group
     name: Wohnküche
+    #unique_id: b4374966-1aec-4ec3-922e-03dd71167288
     entities:
       - light.esszimmer
       - light.kuche
 
   - platform: group
     name: Erdgeschoß
+    #unique_id: 4548ce6d-4b7d-4e6b-a1d8-fbeb49c13075
     entities:
       - light.esszimmer
       - light.kuche
@@ -170,6 +192,7 @@
 
   - platform: group
     name: Hue Go
+    #unique_id: 53cf2c0f-000f-4924-a587-0b291f0903ab
     entities:
       - light.hue_go_erdgeschoss
       - light.hue_go_obergeschoss
@@ -181,9 +204,8 @@
 
   - platform: group
     name: Baumhaus
+    #unique_id: 88e3697a-f515-4696-8415-2d5acb579b68
     entities:
       - light.erdgeschoss
       - light.obergeschoss
-      - light.durchgang
-      - light.treppenhaus
-      - light.hue_go
+      - light.zugang

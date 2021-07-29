@@ -1,60 +1,9 @@
 ################################################################################
-### Switches to hide/show details on Lovelace view (e.g. max/min values)     ###
-### Room: Gästezimmer                                                        ###
+### Switches to hide/show details on Lovelace view                           ###
 ################################################################################
 
   lovelace_details_schlafzimmer:
     name: Lovelace Details - Schlafzimmer
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_arbeitszimmer:
-    name: Lovelace Details - Arbeitszimmer
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_kinderzimmer:
-    name: Lovelace Details - Kinderzimmer
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_badezimmer_og:
-    name: Lovelace Details - Badezimmer (OG)
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_treppenhaus:
-    name: Lovelace Details - Treppenhaus
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_wohnzimmer:
-    name: Lovelace Details - Wohnzimmer
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_kuche:
-    name: Lovelace Details - Küche
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_esszimmer:
-    name: Lovelace Details - Esszimmer
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_gastezimmer:
-    name: Lovelace Details - Gästezimmer
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_eingang:
-    name: Lovelace Details - Eingang
-    initial: false
-    icon: 'mdi:details'
-
-  lovelace_details_badezimmer_eg:
-    name: Lovelace Details - Badezimmer (EG)
     initial: false
     icon: 'mdi:details'
 

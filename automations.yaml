@@ -11,39 +11,6 @@
     data:
       speed: '{{ states(''input_number.argon40_fanspeed'') }}'
   mode: single
-- id: '1612483646732'
-  alias: Licht Eingang - An - Hue Switch
-  description: ''
-  trigger:
-  - device_id: 481c7402cfa0e979560ab8a222c7e464
-    domain: deconz
-    platform: device
-    type: remote_button_short_release
-    subtype: button_1
-  condition: []
-  action:
-  - service: scene.turn_on
-    data:
-      transition: 1
-    target:
-      entity_id: scene.licht_eingang_warm
-  mode: single
-- id: '1612484496288'
-  alias: Licht Eingang - Aus - Hue Switch
-  description: Test
-  trigger:
-  - device_id: 481c7402cfa0e979560ab8a222c7e464
-    domain: deconz
-    platform: device
-    type: remote_button_short_press
-    subtype: button_2
-  condition: []
-  action:
-  - service: light.turn_off
-    entity_id: light.eingang, light.treppenhaus, light.flur
-    data:
-      transition: 1
-  mode: single
 - id: '1612529119404'
   alias: Notify about phone state
   trigger:
@@ -76,31 +43,6 @@
       data:
         clickAction: /shopping-list
         url: /shopping-list
-  mode: single
-- id: '1615751487233'
-  alias: Hue Switch Eingang - Licht aus BaumHaus
-  description: Schaltet das gesamte Licht im BaumHaus aus (z.B. beim Verlassen des
-    Hauses)
-  trigger:
-  - device_id: 481c7402cfa0e979560ab8a222c7e464
-    domain: deconz
-    platform: device
-    type: remote_button_long_press
-    subtype: bottom_buttons
-  condition: []
-  action:
-  - service: notify.alexa_media_echo_flex_treppenhaus
-    data:
-      message: Licht im Haus wird ausgeschaltet
-      data:
-        type: tts
-  - delay: 00:00:20
-  - service: light.turn_off
-    target:
-      entity_id:
-      - light.baumhaus
-    data:
-      transition: 10
   mode: single
 - id: '1615934558420'
   alias: FRITZ!Box 6591 - Guest WiFi angeschaltet - Push Login details

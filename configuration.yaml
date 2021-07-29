@@ -34,42 +34,16 @@ recorder:
       - sensor.date
       - sensor.season
 
-
 #====================================
 #=== Anniversaries
 #====================================
 anniversaries:
   sensors: !include_dir_merge_list birthdays/
 
-
 #====================================
 #=== Yahoo Finance (stock market)
 #====================================
 yahoofinance: !include yahoofinance.yaml
-
-#====================================
-#=== Luftdaten: monitor air quality
-#====================================
-#luftdaten:
-#  sensor_id: 29362
-#  scan_interval: 3600
-#  show_on_map: false
-#  sensors:
-#    monitored_conditions:
-#      - P1
-#      - P2
-#      - temperature
-#      - humidity
-#      - pressure
-
-#====================================
-#=== Synology DSM
-#====================================
-#synology_dsm:
-#  - host: !secret synology_host
-#    username: !secret synology_username
-#    password: !secret synology_password
-#    ssl: false
 
 #====================================
 #=== Spotify account link
@@ -125,8 +99,9 @@ light: !include lights.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
 
-
+# Zones: created in the UI
 zone ui: !include zones.yaml
+# Zones: created manually in yaml
 zone manual: !include_dir_merge_list zones/
 
 # Scenes: created in the UI

@@ -78,15 +78,15 @@
   entities:
     light.ambiance_eingang_vorne:
       state: 'on'
-      brightness: 165
+      brightness: 175
       color_temp: 390
     light.ambiance_eingang_mitte:
       state: 'on'
-      brightness: 165
+      brightness: 175
       color_temp: 291
     light.ambiance_eingang_hinten:
       state: 'on'
-      brightness: 165
+      brightness: 175
       color_temp: 178
 
 - id: '1612196768074'
