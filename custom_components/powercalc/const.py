@@ -6,11 +6,11 @@ DOMAIN_CONFIG = "config"
 DATA_CALCULATOR_FACTORY = "calculator_factory"
 
 CONF_CALIBRATE = "calibrate"
+CONF_CREATE_GROUP = "create_group"
 CONF_CREATE_ENERGY_SENSOR = "create_energy_sensor"
 CONF_CREATE_ENERGY_SENSORS = "create_energy_sensors"
 CONF_CREATE_UTILITY_METERS = "create_utility_meters"
 CONF_ENERGY_SENSOR_NAMING = "energy_sensor_naming"
-CONF_ENTITY_NAME_PATTERN = "entity_name_pattern"
 CONF_FIXED = "fixed"
 CONF_LINEAR = "linear"
 CONF_MODEL = "model"
@@ -60,5 +60,6 @@ MODEL_DIRECTORY_MAPPING = {
         "TRADFRI bulb E14 W op/ch 400lm": "LED1649C5",
         "TRADFRI bulb GU10 W 400lm": "LED1650R5",
         "TRADFRI bulb E27 WS opal 1000lm": "LED1732G11",
+        "TRADFRI bulb GU10 WW 400lm": "LED1837R5",
     }
 }
