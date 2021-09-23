@@ -1,0 +1,29 @@
+################################################################################
+### Friends - Julia und Alex Zobler                                          ###
+################################################################################
+  - name: 'Julia Zobler'
+    date: '1988-05-27'
+  - name: 'Alex Zobler'
+    date: '1988-10-07' 
+  - name: 'Leonas Zobler'
+    date: '2015-01-15'
+  - name: 'Lina Zobler'
+    date: '2019-04-12'
+
+################################################################################
+### Friends - Misc                                                           ###
+################################################################################
+  - name: 'Danny Farell'
+    date: '1988-02-03'
+  - name: 'Katharina von Hartmann'
+    date: '1989-08-24'
+  - name: 'Kate Smith'
+    date: '1991-07-03'
+  - name: 'Kathy McInerney'
+    date: '1991-10-20'
+  - name: 'Denis Mayer'
+    date: '1990-07-28'
+  - name: 'Hannes Stehfest'
+    date: '1990-10-30'
+  - name: 'Kristin Knabe'
+    date: '1989-11-14'

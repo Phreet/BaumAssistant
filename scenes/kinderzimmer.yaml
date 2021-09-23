@@ -1,0 +1,195 @@
+################################################################################
+### Light scenes for Kinderzimmer                                            ###
+### Light bulbs: Philips Hue White and Color Ambiance GU10 (Bluetooth),      ###
+###              Philips Hue White GU10 (Bluetooth)                          ###
+### min_mireds: 153 - max_mireds: 500                                        ###
+################################################################################
+
+################################################################################
+### Farbtemperaturen (color_temp)                                            ###
+################################################################################
+
+- id: '1631737633181'
+  name: Licht - Kinderzimmer - Kalt
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'on'
+      brightness: 255
+      color_mode: color_temp
+      color_temp: 153
+      effect: none
+    light.white_kinderzimmer_bett:
+      state: 'off'
+    light.white_kinderzimmer_wickeltisch:
+      state: 'off'
+
+- id: '1631838633142'
+  name: Licht - Kinderzimmer - Neutral
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'on'
+      brightness: 255
+      color_mode: color_temp
+      color_temp: 233
+      effect: none
+    light.white_kinderzimmer_bett:
+      state: 'off'
+    light.white_kinderzimmer_wickeltisch:
+      state: 'off'
+
+- id: '1634296520177'
+  name: Licht - Kinderzimmer - Warm
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'on'
+      brightness: 255
+      color_mode: color_temp
+      color_temp: 346
+      effect: none
+    light.white_kinderzimmer_bett:
+      state: 'on'
+      brightness: 255
+      color_mode: brightness
+    light.white_kinderzimmer_wickeltisch:
+      state: 'on'
+      brightness: 255
+      color_mode: brightness
+
+- id: '1634296128110'
+  name: Licht - Kinderzimmer - Entspannt
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'on'
+      brightness: 255
+      color_mode: color_temp
+      color_temp: 447
+      effect: none
+    light.white_kinderzimmer_bett:
+      state: 'on'
+      brightness: 63
+      color_mode: brightness
+    light.white_kinderzimmer_wickeltisch:
+      state: 'on'
+      brightness: 63
+      color_mode: brightness
+
+
+################################################################################
+### Farbszenen (rgb_color)                                                   ###
+################################################################################
+
+- id: '1631738370007'
+  name: Licht - Kinderzimmer - Ambiente (warm)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'on'
+      brightness: 255
+      color_mode: rgb
+      rgb_color:
+      - 255
+      - 106
+      - 80
+      effect: none
+    light.white_kinderzimmer_bett:
+      state: 'on'
+      brightness: 128
+      color_mode: brightness
+    light.white_kinderzimmer_wickeltisch:
+      state: 'on'
+      brightness: 128
+      color_mode: brightness
+
+- id: '1631738398241'
+  name: Licht - Kinderzimmer - Ambiente (kalt)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'on'
+      brightness: 255
+      color_mode: rgb
+      rgb_color:
+      - 74
+      - 122
+      - 255
+      effect: none
+    light.white_kinderzimmer_bett:
+      state: 'on'
+      brightness: 128
+      color_mode: brightness
+    light.white_kinderzimmer_wickeltisch:
+      state: 'on'
+      brightness: 128
+      color_mode: brightness
+
+- id: '1631738008502'
+  name: Licht - Kinderzimmer - Wickeln
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'on'
+      brightness: 101
+      color_mode: rgb
+      rgb_color:
+      - 255
+      - 58
+      - 121
+      effect: none
+    light.white_kinderzimmer_bett:
+      state: 'off'
+    light.white_kinderzimmer_wickeltisch:
+      state: 'on'
+      brightness: 63
+      color_mode: brightness
+
+- id: '16362381808713'
+  name: Licht - Kinderzimmer - Ambiente (loop)
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'on'
+      brightness: 230
+      effect: colorloop
+    light.white_kinderzimmer_bett:
+      state: 'off'
+    light.white_kinderzimmer_wickeltisch:
+      state: 'off'
+
+
+################################################################################
+### Lichtszenen                                                              ###
+################################################################################
+
+- id: '1631239534580'
+  name: Licht - Kinderzimmer - Ambiente
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'off'
+    light.white_kinderzimmer_bett:
+      state: 'on'
+      brightness: 102
+      color_mode: brightness
+    light.white_kinderzimmer_wickeltisch:
+      state: 'on'
+      brightness: 102
+      color_mode: brightness
+
+- id: '1631737523481'
+  name: Licht - Kinderzimmer - Nacht
+  icon: mdi:lightbulb-group
+  entities:
+    light.color_kinderzimmer_wand:
+      state: 'on'
+      brightness: 26
+      color_mode: color_temp
+      color_temp: 500
+      effect: none
+    light.white_kinderzimmer_bett:
+      state: 'off'
+    light.white_kinderzimmer_wickeltisch:
+      state: 'off'

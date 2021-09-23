@@ -10,15 +10,19 @@
     light.white_schlafzimmer_1:
       state: 'on'
       brightness: 255
+      color_mode: brightness
     light.white_schlafzimmer_2:
       state: 'on'
       brightness: 255
+      color_mode: brightness
     light.white_schlafzimmer_3:
       state: 'on'
       brightness: 255
+      color_mode: brightness
     light.white_schlafzimmer_4:
       state: 'on'
       brightness: 255
+      color_mode: brightness
 
 - id: '1611585873259'
   name: Licht - Schlafzimmer - Gedimmt
@@ -27,15 +31,19 @@
     light.white_schlafzimmer_1:
       state: 'on'
       brightness: 128
+      color_mode: brightness
     light.white_schlafzimmer_2:
       state: 'on'
       brightness: 128
+      color_mode: brightness
     light.white_schlafzimmer_3:
       state: 'on'
       brightness: 128
+      color_mode: brightness
     light.white_schlafzimmer_4:
       state: 'on'
       brightness: 128
+      color_mode: brightness
 
 - id: '1611585820681'
   name: Licht - Schlafzimmer - Ambiente
@@ -48,9 +56,11 @@
     light.white_schlafzimmer_3:
       state: 'on'
       brightness: 77
+      color_mode: brightness
     light.white_schlafzimmer_4:
       state: 'on'
       brightness: 128
+      color_mode: brightness
 
 - id: '1611585087053'
   name: Licht - Schlafzimmer - Dunkel
@@ -68,6 +78,7 @@
     light.white_schlafzimmer_4:
       state: 'on'
       brightness: 2
+      color_mode: brightness
 
 - id: '1611584785390'
   name: Licht - Schlafzimmer - Nacht
@@ -78,6 +89,7 @@
     light.white_schlafzimmer_2:
       state: 'on'
       brightness: 2
+      color_mode: brightness
     light.white_schlafzimmer_3:
       state: 'off'
     light.white_schlafzimmer_4:

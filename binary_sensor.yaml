@@ -43,5 +43,5 @@
     homeasssistant_core_up_to_date:
       friendly_name: "HomeAssistant Core - Up to date"
       value_template: >
-        "{{ states('sensor.homeasssistant_core_nstalled_version') <
-          == states('sensor.homeasssistant_core_latest_version') }}"
+        {{ states('sensor.homeasssistant_core_installed_version') ==
+          states('sensor.homeasssistant_core_latest_version') }}

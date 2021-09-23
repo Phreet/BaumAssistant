@@ -5,7 +5,7 @@
 ################################################################################
 
 ################################################################################
-### Farbtemperaturen                                                         ###
+### Farbtemperaturen (color_temp)                                            ###
 ################################################################################
 
 - id: '1614296604577'
@@ -14,14 +14,16 @@
   entities:
     light.hue_play_1:
       state: 'on'
-      brightness: 240
+      brightness: 255
+      color_mode: color_temp
       color_temp: 153
-      effect: stop
+      effect: none
     light.hue_play_2:
       state: 'on'
-      brightness: 240
+      brightness: 255
+      color_mode: color_temp
       color_temp: 153
-      effect: stop
+      effect: none
 
 - id: '1614296572433'
   name: Licht - Arbeitszimmer - Neutral
@@ -29,14 +31,16 @@
   entities:
     light.hue_play_1:
       state: 'on'
-      brightness: 240
+      brightness: 255
+      color_mode: color_temp
       color_temp: 233
-      effect: stop
+      effect: none
     light.hue_play_2:
       state: 'on'
-      brightness: 240
+      brightness: 255
+      color_mode: color_temp
       color_temp: 233
-      effect: stop
+      effect: none
 
 - id: '1614296520177'
   name: Licht - Arbeitszimmer - Warm
@@ -44,14 +48,16 @@
   entities:
     light.hue_play_1:
       state: 'on'
-      brightness: 240
+      brightness: 255
+      color_mode: color_temp
       color_temp: 346
-      effect: stop
+      effect: none
     light.hue_play_2:
       state: 'on'
-      brightness: 240
+      brightness: 255
+      color_mode: color_temp
       color_temp: 346
-      effect: stop
+      effect: none
 
 - id: '1614296128110'
   name: Licht - Arbeitszimmer - Entspannt
@@ -59,18 +65,20 @@
   entities:
     light.hue_play_1:
       state: 'on'
-      brightness: 240
+      brightness: 255
+      color_mode: color_temp
       color_temp: 447
-      effect: stop
+      effect: none
     light.hue_play_2:
       state: 'on'
-      brightness: 240
+      brightness: 255
+      color_mode: color_temp
       color_temp: 447
-      effect: stop
+      effect: none
 
 
 ################################################################################
-### Farbszenen (bunte Lichter)                                               ###
+### Farbszenen (rgb_color)                                                   ###
 ################################################################################
 
 - id: '1617408344459'
@@ -79,20 +87,22 @@
   entities:
     light.hue_play_1:
       state: 'on'
-      brightness: 240
+      brightness: 242
+      color_mode: rgb
       rgb_color:
       - 63
       - 155
       - 255
-      effect: stop
+      effect: none
     light.hue_play_2:
       state: 'on'
-      brightness: 240
+      brightness: 242
+      color_mode: rgb
       rgb_color:
       - 76
       - 244
       - 255
-      effect: stop
+      effect: none
 
 - id: '1617408430837'
   name: Licht - Arbeitszimmer - Rot
@@ -100,20 +110,22 @@
   entities:
     light.hue_play_1:
       state: 'on'
-      brightness: 240
+      brightness: 242
+      color_mode: rgb
       rgb_color:
       - 255
       - 95
       - 246
-      effect: stop
+      effect: none
     light.hue_play_2:
       state: 'on'
-      brightness: 240
+      brightness: 242
+      color_mode: rgb
       rgb_color:
       - 255
       - 43
       - 65
-      effect: stop
+      effect: none
 
 - id: '1617408496217'
   name: Licht - Arbeitszimmer - Gelb
@@ -121,20 +133,22 @@
   entities:
     light.hue_play_1:
       state: 'on'
-      brightness: 240
+      brightness: 242
+      color_mode: rgb
       rgb_color:
       - 81
       - 252
       - 255
-      effect: stop
+      effect: none
     light.hue_play_2:
       state: 'on'
-      brightness: 240
+      brightness: 242
+      color_mode: rgb
       rgb_color:
       - 255
       - 192
       - 45
-      effect: stop
+      effect: none
 
 - id: '1617408713144'
   name: Licht - Arbeitszimmer - Grün
@@ -142,17 +156,19 @@
   entities:
     light.hue_play_1:
       state: 'on'
-      brightness: 240
+      brightness: 242
+      color_mode: rgb
       rgb_color:
       - 240
       - 255
       - 63
-      effect: stop
+      effect: none
     light.hue_play_2:
       state: 'on'
-      brightness: 240
+      brightness: 242
+      color_mode: rgb
       rgb_color:
       - 81
       - 255
       - 88
-      effect: stop
+      effect: none

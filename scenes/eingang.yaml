@@ -4,6 +4,10 @@
 ### min_mireds: 153 - max_mireds: 454                                        ###
 ################################################################################
 
+################################################################################
+### Farbtemperaturen (color_temp)                                            ###
+################################################################################
+
 - id: '1612195553484'
   name: Licht - Eingang - Kalt
   icon: mdi:lightbulb-group
@@ -11,14 +15,17 @@
     light.ambiance_eingang_vorne:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
     light.ambiance_eingang_mitte:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
     light.ambiance_eingang_hinten:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
 
 - id: '1612195521047'
@@ -28,14 +35,17 @@
     light.ambiance_eingang_vorne:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
     light.ambiance_eingang_mitte:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
     light.ambiance_eingang_hinten:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
 
 - id: '1612195454030'
@@ -45,14 +55,17 @@
     light.ambiance_eingang_vorne:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_eingang_mitte:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_eingang_hinten:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
 
 - id: '1612195427849'
@@ -62,15 +75,23 @@
     light.ambiance_eingang_vorne:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.ambiance_eingang_mitte:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.ambiance_eingang_hinten:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
+
+
+################################################################################
+### Lichtszenen                                                              ###
+################################################################################
 
 - id: '1612195956393'
   name: Licht - Eingang - Ambiente
@@ -79,14 +100,17 @@
     light.ambiance_eingang_vorne:
       state: 'on'
       brightness: 175
+      color_mode: color_temp
       color_temp: 390
     light.ambiance_eingang_mitte:
       state: 'on'
       brightness: 175
+      color_mode: color_temp
       color_temp: 291
     light.ambiance_eingang_hinten:
       state: 'on'
       brightness: 175
+      color_mode: color_temp
       color_temp: 178
 
 - id: '1612196768074'
@@ -98,6 +122,7 @@
     light.ambiance_eingang_mitte:
       state: 'on'
       brightness: 191
+      color_mode: color_temp
       color_temp: 421
     light.ambiance_eingang_hinten:
       state: 'off'
@@ -109,14 +134,17 @@
     light.ambiance_eingang_vorne:
       state: 'on'
       brightness: 140
+      color_mode: color_temp
       color_temp: 278
     light.ambiance_eingang_mitte:
       state: 'on'
       brightness: 140
+      color_mode: color_temp
       color_temp: 278
     light.ambiance_eingang_hinten:
       state: 'on'
       brightness: 140
+      color_mode: color_temp
       color_temp: 278
 
 - id: '1612195991207'
@@ -126,10 +154,12 @@
     light.ambiance_eingang_vorne:
       state: 'on'
       brightness: 38
+      color_mode: color_temp
       color_temp: 405
     light.ambiance_eingang_mitte:
       state: 'off'
     light.ambiance_eingang_hinten:
       state: 'on'
       brightness: 38
+      color_mode: color_temp
       color_temp: 405

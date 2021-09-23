@@ -6,7 +6,7 @@
 ################################################################################
 
 ################################################################################
-### Farbtemperaturen                                                         ###
+### Farbtemperaturen (color_temp)                                            ###
 ################################################################################
 
 - id: '1612194786121'
@@ -16,18 +16,22 @@
     light.ambiance_kuche_kuhlschrank:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
     light.ambiance_kuche_backofen:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
     light.ambiance_kuche_spule:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
     light.white_tresen:
       state: 'on'
       brightness: 255
+      color_mode: brightness
 
 - id: '1612194786938'
   name: Licht - Küche - Neutral
@@ -36,18 +40,22 @@
     light.ambiance_kuche_kuhlschrank:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
     light.ambiance_kuche_backofen:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
     light.ambiance_kuche_spule:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
     light.white_tresen:
       state: 'on'
       brightness: 255
+      color_mode: brightness
 
 - id: '1612194746552'
   name: Licht - Küche - Warm
@@ -56,18 +64,22 @@
     light.ambiance_kuche_kuhlschrank:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_kuche_backofen:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_kuche_spule:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.white_tresen:
       state: 'on'
       brightness: 255
+      color_mode: brightness
 
 - id: '1612194786763'
   name: Licht - Küche - Entspannt
@@ -76,18 +88,22 @@
     light.ambiance_kuche_kuhlschrank:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.ambiance_kuche_backofen:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.ambiance_kuche_spule:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.white_tresen:
       state: 'on'
       brightness: 255
+      color_mode: brightness
 
 ################################################################################
 ### Lichtszenen                                                              ###
@@ -100,18 +116,22 @@
     light.ambiance_kuche_kuhlschrank:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.ambiance_kuche_backofen:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.ambiance_kuche_spule:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.white_tresen:
       state: 'on'
       brightness: 255
+      color_mode: brightness
 
 - id: '1612195286760'
   name: Licht - Küche - Dekoration
@@ -120,18 +140,22 @@
     light.ambiance_kuche_kuhlschrank:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.ambiance_kuche_backofen:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.ambiance_kuche_spule:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.white_tresen:
       state: 'on'
       brightness: 255
+      color_mode: brightness
 
 - id: '1612194283743'
   name: Licht - Küche - Gedimmt
@@ -140,16 +164,19 @@
     light.ambiance_kuche_kuhlschrank:
       state: 'on'
       brightness: 90
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_kuche_backofen:
       state: 'on'
       brightness: 90
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_kuche_spule:
       state: 'off'
     light.white_tresen:
       state: 'on'
       brightness: 90
+      color_mode: brightness
 
 - id: '1612198788741'
   name: Licht - Küche - Nacht
@@ -160,12 +187,14 @@
     light.ambiance_kuche_backofen:
       state: 'on'
       brightness: 40
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_kuche_spule:
       state: 'off'
     light.white_tresen:
       state: 'on'
       brightness: 2
+      color_mode: brightness
 
 - id: '1612191782763'
   name: Licht - Küche - Hell (Tresen)
@@ -180,6 +209,7 @@
     light.white_tresen:
       state: 'on'
       brightness: 255
+      color_mode: brightness
 
 - id: '1612194185733'
   name: Licht - Küche - Hell (Raum)
@@ -188,14 +218,17 @@
     light.ambiance_kuche_kuhlschrank:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_kuche_backofen:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_kuche_spule:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.white_tresen:
       state: 'off'

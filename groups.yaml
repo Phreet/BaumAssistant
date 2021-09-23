@@ -1,0 +1,14 @@
+####
+
+# Grouping all installed Hue Motion sensors
+  hue_motion_baumhaus:
+    name: Hue Motion - BaumHaus
+    icon: mdi:motion-sensor
+    all: false
+    entities:
+      - binary_sensor.hue_motion_eingang_motion
+      - binary_sensor.hue_motion_esszimmer_motion
+      - binary_sensor.hue_motion_flur_motion
+      - binary_sensor.hue_motion_wohnzimmer
+      - binary_sensor.hue_motion_kuche_motion
+      - binary_sensor.hue_motion_treppenhaus_motion

@@ -1,0 +1,16 @@
+# Average both Luftdaten sensor values north and south of BaumHaus
+# https://www.home-assistant.io/integrations/min_max
+
+  - platform: min_max
+    type: mean
+    name: Luftdaten - Langenhorn - P1
+    entity_ids:
+      - sensor.luftdaten_46507_p1
+      - sensor.luftdaten_4732_p1
+
+  - platform: min_max
+    type: mean
+    name: Luftdaten - Langenhorn - P2
+    entity_ids:
+      - sensor.luftdaten_46507_p2
+      - sensor.luftdaten_4732_p2

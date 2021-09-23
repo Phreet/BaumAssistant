@@ -10,6 +10,7 @@
     light.white_gastezimmer:
       state: 'on'
       brightness: 255
+      color_mode: brightness
 
 - id: '1611597511851'
   name: Licht - Gästezimmer - Gedimmt
@@ -17,7 +18,17 @@
   entities:
     light.white_gastezimmer:
       state: 'on'
-      brightness: 102
+      brightness: 140
+      color_mode: brightness
+
+- id: '1611597522863'
+  name: Licht - Gästezimmer - Dunkel
+  icon: mdi:lightbulb-group
+  entities:
+    light.white_gastezimmer:
+      state: 'on'
+      brightness: 51
+      color_mode: brightness
 
 - id: '1611597512581'
   name: Licht - Gästezimmer - Nacht
@@ -26,3 +37,4 @@
     light.white_gastezimmer:
       state: 'on'
       brightness: 2
+      color_mode: brightness

@@ -3,6 +3,9 @@
 ### https://github.com/bramstroker/homeassistant-powercalc                   ###
 ################################################################################
 
+################################################################################
+### Schlafzimmer: 4 Hue lights                                               ###
+################################################################################
   - platform: powercalc
     entity_id: light.white_schlafzimmer_1
     name: 'White - Schlafzimmer - 1 - Power'
@@ -19,6 +22,9 @@
     entity_id: light.white_schlafzimmer_4
     name: 'White - Schlafzimmer - 4 - Power'
 
+################################################################################
+### Treppenhaus: 4 Hue lights                                                ###
+################################################################################
   - platform: powercalc
     entity_id: light.ambiance_treppenhaus_oo
     name: 'Ambiance - Treppenhaus - OO - Power'
@@ -35,6 +41,9 @@
     entity_id: light.ambiance_treppenhaus_uu
     name: 'Ambiance - Treppenhaus - UU - Power'
 
+################################################################################
+### Arbeitszimmer: 3 Hue lights                                              ###
+################################################################################
   - platform: powercalc
     entity_id: light.hue_play_1
     name: 'Hue Play - 1 - Power'
@@ -43,6 +52,13 @@
     entity_id: light.hue_play_2
     name: 'Hue Play - 2 - Power'
 
+  - platform: powercalc
+    entity_id: light.hue_go_obergeschoss
+    name: 'Hue Go - Obergeschoss - Power'
+
+################################################################################
+### Eingang:                                                           ###
+################################################################################
   - platform: powercalc
     entity_id: light.ambiance_eingang_vorne
     name: 'Ambiance - Eingang - Vorne - Power'
@@ -54,3 +70,31 @@
   - platform: powercalc
     entity_id: light.ambiance_eingang_hinten
     name: 'Ambiance - Eingang - Hinten - Power'
+
+################################################################################
+### Gästezimemr:                                                           ###
+################################################################################
+  - platform: powercalc
+    entity_id: light.white_gastezimmer
+    name: 'White - Gästezimmer - Power'
+
+
+
+# Calculate all the consumed power from lights
+  - platform: template
+    sensors:
+      lights_total_power:
+        friendly_name: All light power
+        unit_of_measurement: W
+        icon_template: mdi:transmission-tower
+        value_template: >
+          {{ expand('group.lights_total_power') 
+          | rejectattr('state', 'in', ['unavailable', 'unknown'])
+          | map(attribute='state') | map('float') | sum | round(2) }}
+
+# Riemann Integration to get total consumed power
+  - platform: integration
+    source: sensor.lights_total_power
+    name: lights_total_consumption
+    unit_prefix: k
+    round: 2

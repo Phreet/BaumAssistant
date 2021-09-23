@@ -1,0 +1,23 @@
+### notify me about upcoming birthdays and events
+
+  - platform: template
+    sensors:
+      event_reminder_today:
+        friendly_name: "Event reminder: today"
+        value_template: >
+          {% for state in states.sensor -%}
+            {%- if state.attributes.attribution == "Sensor data calculated by Anniversaries Integration" and state.state | int <= 0 -%}
+            {{state.attributes.friendly_name}}
+          {% endif -%}
+          {%- endfor %}
+
+  - platform: template
+    sensors:
+      event_reminder_today:
+        friendly_name: "Event reminder: tomorrow"
+        value_template: >
+          {% for state in states.sensor -%}
+            {%- if state.attributes.attribution == "Sensor data calculated by Anniversaries Integration" and state.state | int == 1 -%}
+            {{state.attributes.friendly_name}}
+          {% endif -%}
+          {%- endfor %}

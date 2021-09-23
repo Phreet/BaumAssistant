@@ -4,6 +4,10 @@
 ### min_mireds: 153 - max_mireds: 454                                        ###
 ################################################################################
 
+################################################################################
+### Farbtemperaturen (color_temp)                                            ###
+################################################################################
+
 - id: '1612194776009'
   name: Licht - Flur - Kalt
   icon: mdi:lightbulb-group
@@ -11,23 +15,27 @@
     light.ambiance_flur_vorne:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
     light.ambiance_flur_hinten:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
 
 - id: '1612194882239'
-  name: Licht  - Flur - Neutral
+  name: Licht - Flur - Neutral
   icon: mdi:lightbulb-group
   entities:
     light.ambiance_flur_vorne:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
     light.ambiance_flur_hinten:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
 
 - id: '1612195023082'
@@ -37,10 +45,12 @@
     light.ambiance_flur_vorne:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.ambiance_flur_hinten:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
 
 - id: '1612194845775'
@@ -50,11 +60,18 @@
     light.ambiance_flur_vorne:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.ambiance_flur_hinten:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
+
+
+################################################################################
+### Lichtszenen                                                              ###
+################################################################################
 
 - id: '1612194807824'
   name: Licht - Flur - Ambiente
@@ -63,10 +80,12 @@
     light.ambiance_flur_vorne:
       state: 'on'
       brightness: 166
+      color_mode: color_temp
       color_temp: 225
     light.ambiance_flur_hinten:
       state: 'on'
       brightness: 166
+      color_mode: color_temp
       color_temp: 390
 
 - id: '1612195156302'
@@ -76,6 +95,7 @@
     light.ambiance_flur_vorne:
       state: 'on'
       brightness: 191
+      color_mode: color_temp
       color_temp: 421
     light.ambiance_flur_hinten:
       state: 'off'
@@ -87,10 +107,12 @@
     light.ambiance_flur_vorne:
       state: 'on'
       brightness: 140
+      color_mode: color_temp
       color_temp: 278
     light.ambiance_flur_hinten:
       state: 'on'
       brightness: 140
+      color_mode: color_temp
       color_temp: 278
 
 - id: '1612195120279'
@@ -101,5 +123,6 @@
       state: 'off'
     light.ambiance_flur_hinten:
       state: 'on'
-      brightness: 40
+      brightness: 38
+      color_mode: color_temp
       color_temp: 405

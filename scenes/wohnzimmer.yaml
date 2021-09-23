@@ -6,7 +6,7 @@
 ################################################################################
 
 ################################################################################
-### Farbtemperaturen                                                         ###
+### Farbtemperaturen (color_temp)                                            ###
 ################################################################################
 
 - id: '1611599848397'
@@ -16,24 +16,28 @@
     light.color_wohnzimmer_b:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
-      effect: stop
+      effect: none
     light.color_wohnzimmer_w:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
-      effect: stop
+      effect: none
     light.ambiance_wohnzimmer_g:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
     light.white_wohnzimmer_decke:
       state: 'off'
     light.hue_go_erdgeschoss:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 153
-      effect: stop
+      effect: none
 
 - id: '1611850517009'
   name: Licht - Wohnzimmer - Neutral
@@ -42,24 +46,28 @@
     light.color_wohnzimmer_b:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
-      effect: stop
+      effect: none
     light.color_wohnzimmer_w:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
-      effect: stop
+      effect: none
     light.ambiance_wohnzimmer_g:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
     light.white_wohnzimmer_decke:
       state: 'off'
     light.hue_go_erdgeschoss:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 233
-      effect: stop
+      effect: none
 
 - id: '1611850462312'
   name: Licht - Wohnzimmer - Warm
@@ -68,25 +76,30 @@
     light.color_wohnzimmer_b:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
       effect: stop
     light.color_wohnzimmer_w:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
+      effect: none
     light.ambiance_wohnzimmer_g:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
-      effect: stop
     light.white_wohnzimmer_decke:
       state: 'on'
       brightness: 255
+      color_mode: brightness
     light.hue_go_erdgeschoss:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
-      effect: stop
+      effect: none
 
 - id: '1611850570823'
   name: Licht - Wohnzimmer - Entspannt
@@ -95,28 +108,32 @@
     light.color_wohnzimmer_b:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
-      effect: stop
+      effect: none
     light.color_wohnzimmer_w:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
-      effect: stop
+      effect: none
     light.ambiance_wohnzimmer_g:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
     light.white_wohnzimmer_decke:
       state: 'off'
     light.hue_go_erdgeschoss:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 447
-      effect: stop
+      effect: none
 
 
 ################################################################################
-### Farbszenen (bunte Lichter)                                               ###
+### Farbszenen (rgb_color)                                                   ###
 ################################################################################
 
 - id: '1611600438989'
@@ -126,19 +143,21 @@
     light.color_wohnzimmer_b:
       state: 'on'
       brightness: 241
+      color_mode: rgb
       rgb_color:
       - 255
       - 164
       - 153
-      effect: stop
+      effect: none
     light.color_wohnzimmer_w:
       state: 'on'
       brightness: 191
+      color_mode: rgb
       rgb_color:
       - 190
       - 134
       - 255
-      effect: stop
+      effect: none
     light.ambiance_wohnzimmer_g:
       state: 'off'
     light.white_wohnzimmer_decke:
@@ -146,11 +165,12 @@
     light.hue_go_erdgeschoss:
       state: 'on'
       brightness: 230
+      color_mode: rgb
       rgb_color:
       - 62
       - 92
       - 255
-      effect: stop
+      effect: none
 
 - id: '1611600609675'
   name: Licht - Wohnzimmer - Ambiente (neutral)
@@ -163,18 +183,21 @@
     light.ambiance_wohnzimmer_g:
       state: 'on'
       brightness: 200
+      color_mode: color_temp
       color_temp: 447
     light.white_wohnzimmer_decke:
       state: 'on'
       brightness: 90
+      color_mode: brightness
     light.hue_go_erdgeschoss:
       state: 'on'
       brightness: 255
+      color_mode: rgb
       rgb_color:
       - 102
       - 192
       - 255
-      effect: stop
+      effect: none
 
 - id: '1611600249724'
   name: Licht - Wohnzimmer - Ambiente (warm)
@@ -183,19 +206,21 @@
     light.color_wohnzimmer_b:
       state: 'on'
       brightness: 217
+      color_mode: rgb
       rgb_color:
       - 198
       - 85
       - 246
-      effect: stop
+      effect: none
     light.color_wohnzimmer_w:
       state: 'on'
       brightness: 217
+      color_mode: rgb
       rgb_color:
       - 229
       - 152
       - 19
-      effect: stop
+      effect: none
     light.ambiance_wohnzimmer_g:
       state: 'off'
     light.white_wohnzimmer_decke:
@@ -203,11 +228,12 @@
     light.hue_go_erdgeschoss:
       state: 'on'
       brightness: 241
+      color_mode: rgb
       rgb_color:
       - 255
       - 45
       - 0
-      effect: stop
+      effect: none
 
 - id: '1611609999675'
   name: Licht - Wohnzimmer - Ambiente (loop)
@@ -245,10 +271,12 @@
     light.ambiance_wohnzimmer_g:
       state: 'on'
       brightness: 110
+      color_mode: color_temp
       color_temp: 346
     light.white_wohnzimmer_decke:
       state: 'on'
       brightness: 90
+      color_mode: brightness
     light.hue_go_erdgeschoss:
       state: 'off'
 
@@ -263,10 +291,12 @@
     light.ambiance_wohnzimmer_g:
       state: 'on'
       brightness: 40
+      color_mode: color_temp
       color_temp: 346
     light.white_wohnzimmer_decke:
       state: 'on'
       brightness: 2
+      color_mode: brightness
     light.hue_go_erdgeschoss:
       state: 'off'
 
@@ -283,6 +313,7 @@
     light.white_wohnzimmer_decke:
       state: 'on'
       brightness: 255
+      color_mode: brightness
     light.hue_go_erdgeschoss:
       state: 'off'
 
@@ -293,16 +324,19 @@
     light.color_wohnzimmer_b:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
-      effect: stop
+      effect: none
     light.color_wohnzimmer_w:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
-      effect: stop
+      effect: none
     light.ambiance_wohnzimmer_g:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
     light.white_wohnzimmer_decke:
       state: 'off'
@@ -324,5 +358,6 @@
     light.hue_go_erdgeschoss:
       state: 'on'
       brightness: 255
+      color_mode: color_temp
       color_temp: 346
-      effect: stop
+      effect: none
