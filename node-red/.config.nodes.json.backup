@@ -889,9 +889,9 @@
     },
     "node-red-contrib-time-range-switch": {
         "name": "node-red-contrib-time-range-switch",
-        "version": "1.1.1",
-        "local": false,
-        "user": false,
+        "version": "1.1.2",
+        "local": true,
+        "user": true,
         "nodes": {
             "time-range-switch": {
                 "name": "time-range-switch",
@@ -899,10 +899,10 @@
                     "time-range-switch"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "user": false,
                 "module": "node-red-contrib-time-range-switch",
-                "file": "/opt/node_modules/node-red-contrib-time-range-switch/index.js"
+                "file": "/config/node-red/node_modules/node-red-contrib-time-range-switch/index.js"
             }
         }
     },
@@ -1204,8 +1204,8 @@
     },
     "node-red-node-geofence": {
         "name": "node-red-node-geofence",
-        "version": "0.2.2",
-        "local": false,
+        "version": "0.3.0",
+        "local": true,
         "user": true,
         "nodes": {
             "geofence": {
@@ -1214,13 +1214,12 @@
                     "geofence"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "user": false,
                 "module": "node-red-node-geofence",
-                "file": "/opt/node_modules/node-red-node-geofence/geofence.js"
+                "file": "/config/node-red/node_modules/node-red-node-geofence/geofence.js"
             }
-        },
-        "pending_version": "0.3.0"
+        }
     },
     "node-red-node-msgpack": {
         "name": "node-red-node-msgpack",
@@ -1401,7 +1400,7 @@
     },
     "node-red-contrib-shelly": {
         "name": "node-red-contrib-shelly",
-        "version": "1.9.4",
+        "version": "1.10.1",
         "local": true,
         "user": true,
         "nodes": {
@@ -1413,7 +1412,8 @@
                     "shelly-roller-shutter",
                     "shelly-dimmer",
                     "shelly-rgbw2",
-                    "shelly-motion"
+                    "shelly-motion",
+                    "shelly-emeasure"
                 ],
                 "enabled": true,
                 "local": true,
